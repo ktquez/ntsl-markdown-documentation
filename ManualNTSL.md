@@ -1,59 +1,3 @@
-## Documentação módulo estratégias
-
-Todos 05 tópicos
-
-
-## Documentação Módulo Estratégias
-
-## Sumário
-
-| Introdução                                  |   3 |
-|---------------------------------------------|-----|
-| Estrutura de uma Estratégia                 |   3 |
-| Área de declaração de parâmetros de entrada |   4 |
-| Área de declaração de variáveis e funções   |   5 |
-| Área de código                              |   5 |
-| Fluxo de Execução de uma Estratégia         |   5 |
-| Variáveis, tipos de dados e constantes      |   8 |
-| Tipos de dados                              |   8 |
-| Séries de dados                             |   9 |
-| Arrays                                      |   9 |
-| Correlação de múltiplos ativos              |  10 |
-| Acessando dados anteriores                  |  12 |
-| Constantes                                  |  13 |
-| Controle de Fluxo                           |  14 |
-| If then else                                |  14 |
-| For (To / DownTo) Do                        |  15 |
-| While                                       |  16 |
-| Repeat                                      |  17 |
-| Operadores matemáticos                      |  18 |
-| Operadores lógicos                          |  18 |
-| Funções                                     |  19 |
-| Criando Funções (Sintaxe)                   |  21 |
-| Funções de biblioteca                       |  22 |
-| Funções Matemáticas                         |  22 |
-| Funções Gráficas                            |  22 |
-| Criando uma estratégia de execução          |  25 |
-| Criando uma automação                       |  28 |
-| Opções de entrada                           |  30 |
-| Modo de Execução                            |  30 |
-| Opções de saída                             |  33 |
-| Risco                                       |  33 |
-| Segurança                                   |  34 |
-| Acompanhamento                              |  36 |
-| Regras de Execução                          |  39 |
-| Abrir Estratégias                           |  43 |
-| Gerenciador de Estratégias                  |  44 |
-| Exportar / Importar Estratégias             |  44 |
-| Criar Regra de Alarme                       |  46 |
-| Screening                                   |  48 |
-| Editor de Estratégias                       |  51 |
-| Anexo                                       | 318 |
-| Exemplos de funcionamento de estratégias    | 318 |
-
-
-## Documentação Módulo Estratégias
-
 ## Introdução
 
 A  NTSL  (Nelogica  Trading  System  Language)  é  uma  poderosa  linguagem  criada  com  um  único propósito:  permitir  o  desenvolvimento  dos  melhores  e  mais eficientes  sistemas  algorítmicos  de operação. A Nelogica oferece juntamente com a NTSL um ambiente de criação pioneiro e revolucionário chamado  AlgoTools.  Com  o  AlgoTools  é  possível  codificar,  testar  e  simular  com  grande  agilidade qualquer estratégia de operação. Na NTSL, o usuário encontra uma grande facilidade no momento de criação de suas estratégias, a possibilidade de criar toda ela em português, havendo assim, a facilidade e fácil entendimento da estratégia criada.
@@ -63,7 +7,7 @@ A  NTSL  (Nelogica  Trading  System  Language)  é  uma  poderosa  linguagem  cr
 Observe o trecho de código abaixo que representa o indicador média móvel. Esse código apresenta as três áreas que definem a estrutura de uma estratégia. São elas: área de declaração de parâmetros de entrada, área de declaração de variáveis e funções e área de código.
 
 
-## Documentação Módulo Estratégias
+
 
 
 A área de parâmetros de entrada compreende toda a região entre a palavra reservada input (parâmetro) e a palavra reservada var. A área de variáveis e funções começa com a palavra var e estende-se até a palavra begin (inicio) . Finalmente, a região de código inicia-se com a palavra reservada begin (inicio) e finaliza na palavra end (fim) , conforme imagem abaixo:
@@ -74,7 +18,7 @@ A área de parâmetros de entrada compreende toda a região entre a palavra rese
 Na área de declaração de parâmetros de entrada informamos todos os parâmetros externos que a estratégia usará. Esses parâmetros são fundamentais, pois:
 
 
-## Documentação Módulo Estratégias
+
 
 - ● Definem a interface com o mundo externo, ou seja, é onde usuário poderá alterar e o que servirá como parâmetro de chamada caso a estratégia seja utilizada em outra interface/estratégia. x x
 - ● Define os itens que serão analisados no processo de otimização.
@@ -106,7 +50,7 @@ Nesta parte descreve-se o código propriamente dito, ou seja, as regras que util
 - O  código de uma  estratégia é executado de maneira sequencial. Porém, ele é executado sequencialmente candle por candle, como se houvesse um laço que percorre toda série de dados de um ativo.
 
 
-## Documentação Módulo Estratégias
+
 
 Sendo  assim,  a  sequência  de  comandos existente na área de código será executada uma vez para cada candle existente. Para cada candle, será executado o código da estratégia em um loop implícito. A regra em pseudocódigo é, portanto:
 
@@ -129,13 +73,13 @@ Quando estiver utilizando séries em sua estratégia, é importante lembrar que 
 Abaixo, um exemplo de como uma variável arbitrária 'nValor' funcionaria caso o último candle estivesse sendo avaliado. Caso eu quisesse acessar o valor dela há 2 candles passados, utilizaria 'nValor[2]'.
 
 
-## Documentação Módulo Estratégias
+
 
 
 Porém, caso o código esteja sendo executado em um candle no passado, o nValor[0] seria referente ao candle atual do processamento, e não ao último candle como no exemplo passado. Os outros candles também seriam  acessados  com  base no  candle  que está  sendo  processado  no  momento,  como no exemplo abaixo.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Variáveis, tipos de dados e constantes
@@ -157,7 +101,7 @@ A  NTSL  suporta  a  conversão  implícita  de  valores  Float  a  Inteiros,  i
 As variáveis na linguagem oferecem uma flexibilidade muito maior do que na maioria dos sistemas de programação conhecidos.
 
 
-## Documentação Módulo Estratégias
+
 
 Todas as variáveis são globais, e deve ser dada uma atenção especial quando utilizadas. Ao programar usando variáveis globais,  deve  ser  levado  em  consideração  o  comportamento  do processamento  do fluxo de execução, a cada vez que o fluxo de execução é realizado as variáveis podem ter seu valor alterado com base no último valor que tinham.
 
@@ -194,7 +138,7 @@ A fim de exemplificação, segue um exemplo de declaração de um Array  estáti
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Correlação de múltiplos ativos
@@ -225,7 +169,7 @@ const
 WDOFUT = Asset("WDOFUT", feedBMF);
 
 
-## Documentação Módulo Estratégias
+
 
 
 Além do acesso às séries de dados, pode-se retornar o ticker (String) e bolsa (String) do Asset declarado, a partir das funções GetAsset e GetFeed:
@@ -241,7 +185,7 @@ A coloração cinza será identificada, caso não sejam satisfeitas as condiçõ
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 Atenção: Ao utilizar gráficos atemporais em conjunto com múltiplos ativos, as avaliações de fechamento de candle serão feitas sempre em função do fechamento de candle do ativo principal. Nesse momento, os ativos auxiliares não necessariamente terão seus fechamentos no mesmo momento, já que esses gráficos são atemporais, e não respeitam o mesmo critério de fechamento: tempo.
@@ -263,7 +207,7 @@ A linha de código acima está atribuindo o valor da variável Preco[1] para a v
 Portanto, Preco[1] refere-se ao valor de ontem do preço de fechamento (sResult vale então 12,40 em nosso exemplo). Dessa forma, o número inteiro que especificarmos entre colchetes indica ao sistema quantos períodos no passado deve-se acessar a informação.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Constantes
 
@@ -288,7 +232,7 @@ otLimit - Tipo limite. otMarket - A mercado. otStopLimit - Tipo stop.
 clAqua ou clAzulClaro - Cor azul-claro clBlack ou clPreto - Cor preta clBlue ou clAzul - Cor azul clCream ou clCreme - Cor creme clDkGray ou clCinzaEscuro - Cor cinza-escuro clFuchsia ou clFucsia - Cor fúcsia clGray ou clCinza - Cor cinza clGreen ou clVerde - Cor verde clLime ou clVerdeLimao - Cor verde-limão clLtGray ou clCinzaClaro - Cor cinza-claro clMaroon ou clMarrom - Cor marrom clMedGray ou clCinzaMedio - Cor Cinza médio clMoneyGreen ou clVerdeClaro - Cor verde-claro clNavy ou clAzulMarinho - Cor azul-marinho clOlive ou clVerdeOliva - Cor verde-oliva clPurple ou clPurpura - Cor púrpura clRed ou clVermelho - Cor vermelha clSilver ou clPrata - Cor prata clSkyBlue ou clAzulClaro - Cor azul-claro clTeal - Cor Verde-azulado clWhite ou clBranco - Cor branca clYellow ou clAmarelo - Cor amarela
 
 
-## Documentação Módulo Estratégias
+
 
 ## Controle de Fluxo
 
@@ -307,7 +251,7 @@ A seguir um exemplo de coloração de candles de acordo com a condição present
 Se o valor de fechamento da barra atual (Close equivale a Close[0]) for igual ao fechamento da barra anterior  (Representado  por  Close[1])  executa-se  o  código  que  segue  a  palavra  reservada THEN (ENTÃO) .  Caso contrário, o sistema executa o código subsequente até chegar na palavra reservada ELSE (SENÃO) .
 
 
-## Documentação Módulo Estratégias
+
 
 ## For (To / DownTo) Do
 
@@ -330,7 +274,7 @@ A fim didático, segue um exemplo de cálculo de fatorial, utilizando as duas es
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## For DownTo Do:
@@ -346,7 +290,7 @@ No código a seguir, reescrevemos o indicador média móvel utilizando a instru�
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Repeat
@@ -359,7 +303,7 @@ A fim de comparação com as outras estruturas já abordadas, segue o exemplo de
 
 
 
-## Documentação Módulo Estratégias
+
 
 ## Operadores
 
@@ -392,7 +336,7 @@ Os Operadores lógicos são utilizados principalmente para comparações.
 Representado pela palavra reservada and (e) , retornará TRUE somente quando as duas condições de teste forem verdadeiras conforme Tabela Verdade abaixo:
 
 
-## Documentação Módulo Estratégias
+
 
 | Condição   | AND   | Condição 2   | Resultado   |
 |------------|-------|--------------|-------------|
@@ -417,11 +361,11 @@ Representado pela palavra reservada or (ou) , retornará TRUE (verdadeiro) sempr
 Conforme visto, funções são declaradas e descritas na área de declaração de variáveis e funções, abaixo um exemplo de funções:
 
 
-## Documentação Módulo Estratégias
 
 
 
-## Documentação Módulo Estratégias
+
+
 
 
 Observe  que  primeiro  são  declaradas  as  seis  variáveis  usadas  na  área  principal.  É  sempre interessante manter o código o mais claro e organizado possível e as funções desempenham um papel fundamental nessa tarefa.
@@ -458,12 +402,12 @@ Como visto anteriormente, a função Plot realiza a  ligação  dos  valores  ge
 Esta  funcionalidade  denominada PaintBar(cor) permite  ao  usuário,  colorir  o  gráfico  com  cores  em determinadas situações do indicador, como na imagem abaixo(as cores podem ser determinadas por Strings , ou a partir da função RGB):
 
 
-## Documentação Módulo Estratégias
 
 
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Back-Testing
 
@@ -498,21 +442,21 @@ Para criar uma automação você precisará criar uma estratégia de execução,
 Ao  abrir  o  Editor  de  Estratégias,  você  pode  criar  sua  estratégia  de  execução  utilizando  funções  de backtest (essas funções irão caracterizar a estratégia como sendo uma estratégia de execução e isso possibilitará a sua seleção no próximo passo para que a estratégia seja automatizada). Para criar uma estratégia  de  execução  você  deve usar  funções  do  módulo backtest,  que  pode  ser  visto na imagem abaixo:
 
 
-## Documentação Módulo Estratégias
+
 
 
 Sugerimos que você utilize a função Nova estratégia, e selecione exemplos de estratégias de execução se você não estiver familiarizado com programação ou com o Editor de Estratégias
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 Abaixo é apresentado um exemplo de estratégia, utilizando o indicador IFR/RS, que pode ser utilizado no módulo de estratégias automatizadas:
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Criando uma automação
@@ -521,7 +465,7 @@ Para criar uma nova automação basta abrir a interface de controle e localizar 
 
 
 
-## Documentação Módulo Estratégias
+
 
 Após  clicar  nesse  botão  será  aberta  a  janela  de  criação  da  da  estratégia  automatizada  onde  será configurada  os  parâmetros  da  automação  em  duas  etapas.  A  primeira  etapa  contém  configurações essenciais e obrigatórias para a criação da automação.
 
@@ -549,7 +493,7 @@ Em  horário  de  entrada  é  possível  especificar  o  período  de  tempo  e
 Há dois modos de execução: Realizar envio de ordens no fechamento do candle e Realizar envio de ordens quando a condição for satisfeita, também chamado de modo Tick a Tick. A mudança de uma opção  para  a  outra  causa  grande  impacto  na  maneira  como  o  código  da  estratégia  é  interpretado. Abaixo, é detalhado como cada modo se comporta.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Ordens no Fechamento do Candle
@@ -563,7 +507,7 @@ Ordens que aumentem a exposição para o mercado e foram enviadas ao final de um
 É importante ressaltar que a automação poderá apresentar divergências em relação ao backtest ao ser comparado com a execução da automação em uma conta de simulação (ordens simuladas) ou conta
 
 
-## Documentação Módulo Estratégias
+
 
 real (ordens reais), operando ao vivo no mercado real. Isso se deve a diversos fatores, como: Spread, Margem, RLP, Delays na Bolsa, Alta volatilidade de preço de alguns ativos, entre outros.
 
@@ -586,7 +530,7 @@ A estratégia de atualização das ordens, quando a opção de múltiplos envios
 O temporizador de envio de ordens só atualiza quando alguma modificação de ordem é enviada, ou seja, se o código executado enviar alguma ordem diferente das que já estão apregoadas, ele irá avaliar quando foi a última modificação feita e quando deverá fazer a próxima modificação e então liberar novos envios e modificações de ordens.
 
 
-## Documentação Módulo Estratégias
+
 
 { deprecated } A configuração antiga de número de ordens por candle não existe mais, vimos que ela mais atrapalhava o usuário do que ajudava, e escolhemos seguir em uma estratégia mais segura e inteligente.
 
@@ -608,7 +552,7 @@ Nesta outra etapa da configuração, é possível alterar configurações de sa�
 Seguindo as configurações temos as configurações de risco da automação. Na seção Pausar e Zerar ao Alcançar é possível configurar parâmetros que irão pausar e encerrar as posições abertas de acordo
 
 
-## Documentação Módulo Estratégias
+
 
 com um objetivo de ganho, ou um limite de perda. Caso você não deseje encerrar a posição quando atingir um objetivo de ganho seleciona a opção 'Não Zerar ao Atingir Objetivo de Ganho'.
 
@@ -622,7 +566,7 @@ Aqui também disponibilizamos um atalho para que você possa configurar o risco 
 Por fim, na seção Segurança, temos algumas configurações para definir o comportamento da estratégia em caso ocorra um erro de execução no código da mesma ou eventuais mudanças do mercado, como a entrada do ativo em leilão.
 
 
-## Documentação Módulo Estratégias
+
 
 
 Uma vez criada a automação, você pode visualizá-la na janela Automação de Estratégias:
@@ -642,7 +586,7 @@ Para ligar/pausar uma automação de maneira individual pode-se utilizar o paine
 Através do menu de contexto também é possível zerar a posição de uma estratégia pausada ou Pausar + Zerar Posição de uma estratégia em execução. Podemos também editar o código da automação no Editor de Estratégias, Excluir a automação que irá excluir também a carteira atrelada a ela. Para realizar edições na  sua  automação,  você  pode,  dentro  do  interface  de  controle,  clicar  com  botão direito na
 
 
-## Documentação Módulo Estratégias
+
 
 estratégia desejada e ir em 'Editar Automação' ou clicar diretamente na engrenagem. Lembrando que caso a sua automação esteja ligada, ao realizar alguma edição ela será pausada.
 
@@ -650,13 +594,13 @@ estratégia desejada e ir em 'Editar Automação' ou clicar diretamente na engre
 Para acompanhar os detalhes do que a execução está executando, vá em Detalhes. Nesta janela você poderá acompanhar tanto as ordens e sinais que a estratégia está gerando, como também acompanhar a performance e resultados da estratégia mais detalhadamente.
 
 
-## Documentação Módulo Estratégias
+
 
 
 Na janela de Automações é possível utilizar os botões no canto superior direito da interface de controle para pausar todas as automações em execução ou para pausar e zerar todas as posições em aberto:
 
 
-## Documentação Módulo Estratégias
+
 
 
 Caso você possua alguma automação ligada será possível identificar mesmo com a janela de estratégias automatizadas fechadas, pois no menu superior da sua Plataforma será destacado em azul o menu de Estratégias.
@@ -669,7 +613,7 @@ Neste menu você será informado quantas estratégias você possui em execução
 As automações de estratégias funcionam com as mesmas regras que são utilizadas no backtest das estratégias  de  execução.  Para  entender  melhor  o  que  cada  função  faz  relacionada  à  execução  de ordens, recomendamos primeiramente a leitura das funções de backtest. Aqui detalhamos as regras por trás dos mecanismos de automação para facilitar o entendimento do usuário na hora de implementar uma estratégia de execução já pensando na sua automação.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Modo de Execução do Backtest: OHLC e Tick a Tick
 
@@ -688,7 +632,7 @@ Por utilizar uma granularidade mais fina, o modo Tick a Tick tem menor disponibi
 Considere a imagem abaixo, que ilustra dois candles de alta, onde a linha verde representa o movimento real dos preços dentro do candle e o ponto vermelho, a ponto onde uma ordem foi enviada. No caso de um backtest enviando uma ordem alguns ticks acima da abertura, no modo OHLC, a ordem só seria executada após o preço atingir a mínima (LOW) e, posteriormente, alcançar o fechamento (CLOSE). Já no modo Tick a Tick, a ordem poderia ser executada assim que o preço atinge o nível programado, mesmo antes do candle ser concluído, permitindo, por exemplo, que uma ordem de LOSS seja disparada antes do fechamento do candle.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Reprocessamento do candle em aumentos de posição
@@ -708,7 +652,7 @@ Ordens conflitantes são automaticamente gerenciadas pelo automatizador, ou seja
 Ordens de cobertura, ou ordens ToCover. nunca irão inverter a sua posição; elas garantem que a ordem contrária  vai  respeitar  sempre  a  posição  da  operação.  Recomendamos  que  o  programador  utilize sempre ordens de saída de posição como ordens ToCover explicitamente no código para garantir que o operacional que o usuário está programando está correto. Para isso, as ordens ToCover são sempre enviadas como ordens OCO, logo você não precisa se preocupar em gerenciar e cancelar eventuais ordens de cobertura que poderiam ficar abertas após a execução de apenas uma das pernas de saída. Ordens de cobertura são enviadas ou atualizadas a toda mudança de candle, cabe ao usuário gerenciar a quantidade de cada ordem caso você esteja posicionado em mais de um lote para cobrir corretamente a  exposição  ao  mercado.  Na  finalização  do  candle,  caso  o  código indique um envio de um mesmo
 
 
-## Documentação Módulo Estratégias
+
 
 número de ordens de cobertura, será realizada uma edição da OCO para os novos valores de preço correspondentes. Por outro lado, caso o envio aumente ou diminua o número de ordens para aquele candle, a OCO aberta será cancelada, e será enviada uma nova OCO com as saídas definidas pelo código.
 
@@ -717,7 +661,7 @@ número de ordens de cobertura, será realizada uma edição da OCO para os novo
 Caso o usuário configure uma ordem OCO pela configuração da automação, as ordens de cobertura definidas  pela  estratégia  serão  desconsideradas,  já  que  todas  ordens  já  vão  possuir  essa  cobertura natural da ordem OCO.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Indicadores que atualizam valores anteriores
 
@@ -735,7 +679,7 @@ Além  das  abas,  o  usuário  também  poderá  pré-visualizar  o  seu  códi
 
 
 
-## Documentação Módulo Estratégias
+
 
 ## Gerenciador de Estratégias
 
@@ -751,7 +695,7 @@ Nesta funcionalidade, permite ao usuário exportar as estratégias criadas por e
 O usuário também tem a possibilidade de querer exportar o código fonte da estratégia ou apenas o arquivo executável.
 
 
-## Documentação Módulo Estratégias
+
 
 
 Na  importação,  o  usuário  tem  a  funcionalidade  de  escolher  quais  estratégias  serão  carregadas  e adicionadas junto à sua plataforma Nelogica.
@@ -778,7 +722,7 @@ Caso o usuário deseje utilizar outras informações, ele poderá clicar no bot�
 Após a criação da regra de alarme, a estratégia deverá ser ativada, através do menu "Ferramentas &gt; Gerenciador de Alarmes &gt; Estratégias", selecione "Novo Alarme".
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Criar Regra de Execução
@@ -803,7 +747,7 @@ Caso o usuário deseje utilizar outras informações, ele irá poder clicar no b
 Ao clicar no botão "Aplicar" a estratégia criada é aplicada à lista e irá mostrar os ativos que satisfazem a condição.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Inserir Regra de Coloração
@@ -813,7 +757,7 @@ A funcionalidade de inserir regra de coloração permite ao usuário colorir o g
 As regras de coloração serão feitas seguindo a ideologia de um indicador ou seja, respeitando o layout atual da janela.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Condições de Coloração
@@ -826,7 +770,7 @@ As condições de coloração permitem ao usuário, quais valores ele irá utili
 - ● Cotações Anteriores: Permite ao usuário utilizar os valores presentes nas cotações anteriores, conforme mostra na guia Variáveis e séries de dados.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Editor de Estratégias
@@ -841,11 +785,11 @@ A janela de Editor de estratégias é onde o usuário poderá criar suas própri
 - ● Estatísticas : Ao executar uma estratégia de execução pelo editor,  o usuário poderá visualizar a estatística do relatório de performance.
 
 
-## Documentação Módulo Estratégias
 
 
 
-## Documentação Módulo Estratégias
+
+
 
 Dentro do Editor de estratégias o usuário irá possuir as seguintes opções:
 
@@ -885,7 +829,7 @@ Nas propriedades do Editor de estratégias, o usuário irá poder utilizar valor
 - ● Preenchimento: Configuração para visualizar um preenchimento entre as linhas.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Nova Estratégia
@@ -900,7 +844,7 @@ Ao clicar no botão de Nova Estratégia, o usuário poderá escolher entre as op
 - ● Alarme: Será criado um exemplo, com a função Alert.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Lista de Funções
@@ -928,7 +872,7 @@ BuyStop(Stop : Float; Limite : Float; Quantidade : Float = ''): Realiza envio de
 BuyToCoverAtMarket: Realiza o fechamento de uma operação de venda.
 
 
-## Documentação Módulo Estratégias
+
 
 BuyToCoverLimit(Preco : Float; Quantidade : Float = ''): Envia uma ordem de compra limite para fechar a operação.
 
@@ -989,7 +933,7 @@ XRay(strName : String, bValue : Boolean, strGroup : String, dValue : Float, Colo
 ConsoleLog(Content : String, Color : Integer = clBlack) Imprime uma string no terminal de console para ajudar na depuração do código.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Calendário
 
@@ -1048,12 +992,12 @@ Retorna o valor de máxima de determinado
 HighM(QuantidadeMesesAnteriores : Integer): Retorna o valor de máxima de determinado
 
 
-## Documentação Módulo Estratégias
+
 
 mês retroativo.
 
 
-## Documentação Módulo Estratégias
+
 
 HighW(QuantidadeSemanasAnteriores  :  Integer): Retorna  o  valor  de  máxima  de determinada semana anterior.
 
@@ -1110,7 +1054,7 @@ TimeToMinutes(Hora : Integer): Converte um horário em minutos.
 Today: Retorna a data atual do sistema.
 
 
-## Documentação Módulo Estratégias
+
 
 Tuesday: Retorna o número 2 referente ao dia da semana: Terça-feira.
 
@@ -1146,7 +1090,7 @@ DiMaisDiMenos(Periodo : Integer): Exemplo de implementação do indicador DI+/DI
 IFR(Periodo : Integer): Exemplo de implementação do indicador IFR.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Gráficas
 
@@ -1209,7 +1153,7 @@ RGB(Red : Integer, Green : Integer, Blue : Integer): Coloração a partir dos pa
 SetPlotColor(NumeroPlot : Integer, Cor : Integer): Altera a coloração de determinado Plot.
 
 
-## Documentação Módulo Estratégias
+
 
 SetPlotStyle(NumeroPlot  :  Integer;  Estilo  :  Integer): Altera  o  estilo  da  linha  de  um  plot específico.
 
@@ -1262,7 +1206,7 @@ AvgAgrTotal(AlertaVariacoes : Integer,  TipoVolume  :  Integer,  TipoDesenho:  I
 AvgSeparation(Periodo  :  Integer,  TipoMedia  :  Integer): Retorna  o  valor  do  indicador Afastamento Médio.
 
 
-## Documentação Módulo Estratégias
+
 
 AvgTrueRange(Periodo : Integer, TipoMedia : Integer): Retorna o valor do indicador True Range.
 
@@ -1313,7 +1257,7 @@ Envelope(Percentual : Float, PeriodoMedia : Integer, TipoMedia : Integer)|Linha 
 Euroinvest(Risco:  Integer,  ModoCalculo  :  Integer,  Periodo  :  Integer,  Desvio  :  Float,  UsarVWAP  : Boolean, UsarAtr : Boolean) Retorna o valor do indicador Euroinvest.
 
 
-## Documentação Módulo Estratégias
+
 
 FastStochastic(Periodo  :  Integer,  PeriodoMedia  :  Integer,  TipoMedia  :  Integer): Retorna  o  valor  do indicador Estocástico Rápido.
 
@@ -1366,7 +1310,7 @@ Media(Periodo : Integer, TipoSerie : Serie): Retorna o dado do indicador Média 
 MediaExp(Periodo : Integer, TipoSerie : Serie): Retorna o dado do indicador Média Móvel(Exponencial).
 
 
-## Documentação Módulo Estratégias
+
 
 MFI: Retorna o valor do indicador Market Facilitation Index.
 
@@ -1433,7 +1377,7 @@ PTAX: Retorna o valor do indicador TR - PTAX.
 PTAXFuturo: Retorna o valor do indicador TR - PTAX Futuro.
 
 
-## Documentação Módulo Estratégias
+
 
 QuantityVol(VolumeProjetado : Boolean, Agressores : Boolean): Retorna o valor do indicador Volume Quantidade.
 
@@ -1488,7 +1432,7 @@ TRIX(Media : Integer, TipoMedia : Integer): Retorna o valor do indicador TRIX.
 TRIXM(Media : Integer, TipoMedia : Integer): Retorna o valor do indicador TRIXM.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Livro
 
@@ -1549,7 +1493,7 @@ GetFeed(Asset : Ativo = ''): Retorna o código textual do Feed do ativo.
 IsBMF: Verifica se o ativo pertence ao segmento BMF.
 
 
-## Documentação Módulo Estratégias
+
 
 Lote: Retorna a quantidade de contratos referente ao lote.
 
@@ -1618,7 +1562,7 @@ HarmonicMean(SerieDados : Serie, Periodo : Integer): Retorna a média harmônica
 Highest(SerieS Dados : Serie, Periodo : Integer): Retorna o maior valor da série dentro do período.
 
 
-## Documentação Módulo Estratégias
+
 
 HighestBar(SerieDeDados : Serie, Periodo : Integer): Retorna o índice do maior valor da série no período.
 
@@ -1681,7 +1625,7 @@ Sign(Valor : Float): Retorna um número inteiro, baseado no sinal de um número.
 Sin(Valor : Float): Retorna o valor de Seno em radianos.
 
 
-## Documentação Módulo Estratégias
+
 
 Sine(Valor : Float):
 
@@ -1736,7 +1680,7 @@ Vega(DaysLeft : Integer, StrikePr : Float, AssetPr : Float, Rate100 : Float, Vol
 Select: Seleciona um ativo para mostrar no Screening.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Alarme
 
@@ -1767,7 +1711,7 @@ No exemplo a seguir, será emitido um alarme(e um popup com coloração vermelha
 if(Media(9, Close) &lt; Media(21, Close)) then Alert(clRed) ;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Back-Testing
 
@@ -1802,7 +1746,7 @@ if (Low = Low[1]) then
 BuyAtMarket;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função BuyLimit
 
@@ -1829,7 +1773,7 @@ Void: Sem retorno.
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No  exemplo,  caso  a  média  exponencial  de  periodo1  for  maior  que  a  de  periodo2,  será criada a ordem de compra considerando o último preço.
 
@@ -1871,7 +1815,7 @@ A função BuyPositionQty retorna o tamanho da posição em quantidade da compra
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 buyPos := BuyPositionQty;
 
@@ -1914,7 +1858,7 @@ Float
 No exemplo, será atribuído à variável " pCompra " o valor de compra da posição.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função BuyStop
 
@@ -1953,7 +1897,7 @@ BuyStop(pStop, pStop, lote) ;
 A função BuyToCoverAtMarket realiza o envio de uma ordem de compra a mercado, caso exista uma posição de venda em aberto.
 
 
-## Documentação Módulo Estratégias
+
 
 Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
 
@@ -1990,7 +1934,7 @@ Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  o
 Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -2029,7 +1973,7 @@ BuyToCoverStop(Stop : Float, Limite : Float,  Quantidade : Float = '')
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Stop:
 
@@ -2076,7 +2020,7 @@ if (HasPendingOrders) then
 CancelPendingOrders;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função ClosePosition
 
@@ -2115,7 +2059,7 @@ HasPendingOrders
 Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 if (HasPendingOrders) then
 
@@ -2158,7 +2102,7 @@ Boolean
 No exemplo, caso exista posição, ocorrerá o fechamento.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função IsBought
 
@@ -2207,7 +2151,7 @@ Sem parâmetros.
 ## Retorno:
 
 
-## Documentação Módulo Estratégias
+
 
 Boolean:
 
@@ -2260,7 +2204,7 @@ No exemplo, será atribuído à variável " mPrice ", o valor da função MyPric
 Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 ## vPosition:= Position;
 
@@ -2305,7 +2249,7 @@ Float
 No exemplo, será atribuído à variável "vPosition", a posição.
 
 
-## Documentação Módulo Estratégias
+
 
 ## vPosition:= PositionQty;
 
@@ -2342,7 +2286,7 @@ A função ReversePosition tem como funcionalidade realizar o envio de ordens, a
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 ## ReversePosition
 
@@ -2388,7 +2332,7 @@ Integer
 No exemplo, a variável " sellPos " irá receber o total da posição de venda
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função SellPositionQty
 
@@ -2466,10 +2410,10 @@ Void: Sem retorno.
 No exemplo abaixo, será executada uma ordem de venda a mercado, caso 'newOpVenda' for verdadeiro.
 
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 sellshortatmarket ;
 
@@ -2502,7 +2446,7 @@ No exemplo, caso a média exponencial de 9 períodos for menor que a de 21, ser�
 if (MediaExp(9, Close) &lt; MediaExp(21, Close)) then SellShortLimit(vPreco, lote) ;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função SellShortStop
 
@@ -2541,7 +2485,7 @@ SellShortStop(pAux, pAux);
 A função SellToCoverAtMarket tem como funcionalidade realizar o envio de uma ordem de venda a mercado, caso exista uma posição de compra.
 
 
-## Documentação Módulo Estratégias
+
 
 Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
 
@@ -2580,7 +2524,7 @@ Quando o parâmetro é especificado, a estratégia ignora os campos de configura
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 SellToCoverLimit(Preco : Float,  Quantidade : Float = '')
 
@@ -2619,7 +2563,7 @@ SellToCoverStop(Stop : Float, Limite : Float,  Quantidade : Float = '')
 Stop: Valor que será o gatilho da ordem. Limite: Valor que será o limite do preço aceito para execução. Quantidade: Quantidade da ordem.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Retorno:
 
@@ -2658,7 +2602,7 @@ No exemplo, será efetuada a inserção de uma ordem de compra, tipo Stop, no pr
 SendOrder(osBuy, otStopLimit, 5, 17.50, 17.44);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função DailyResult
 
@@ -2746,10 +2690,10 @@ XRay ( "BuyConditionl" bByCorditiorl Close[2] Close[l] "Buy" Close[l] Close[o] "
 
 Produzindo o seguinte resultado:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 
 Nesse caso, tanto as BuyCondition2 e SellCondition2 eram verdadeiras, deixando os respectivos grupos com 1 variável verdadeira em cada.
@@ -2780,7 +2724,7 @@ No exemplo, será impresso os dias e as variações do WDOFUT em que teve varia�
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Calendário
@@ -2810,7 +2754,7 @@ No exemplo, a variável "nBA" irá receber o dado de retorno da função BarAnnu
 ## nBA := BarAnnualization;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função BarDuration
 
@@ -2855,7 +2799,7 @@ Sem parâmetros.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -2904,7 +2848,7 @@ No exemplo, a variável "n" irá receber um inteiro referente ao tempo determina
 A função CalcDate retorna um valor o qual representa uma data deslocada, obtida ao adicionar ou subtrair dias de uma data de referência.
 
 
-## Documentação Módulo Estratégias
+
 
 Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
 
@@ -2983,10 +2927,10 @@ No exemplo a seguir, será atribuído à variável "nFechamento" o valor de fech
 
 Determina a quantidade desejada de dias anteriores.
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 A função CloseM tem como finalidade retornar o valor de fechamento de um número determinado de meses atrás.
 
@@ -3029,7 +2973,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo a seguir, será atribuído à variável "wFechamento" o valor de fechamento de duas semanas anteriores à semana atual.
 
@@ -3072,7 +3016,7 @@ Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 
 Determina a quantidade desejada de anos anteriores.
 
 
-## Documentação Módulo Estratégias
+
 
 ## nData := CurrentAssetDate;
 
@@ -3117,7 +3061,7 @@ Integer
 No exemplo, será atribuído à variável "nData" a data do dia atual.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função CurrentTime
 
@@ -3158,7 +3102,7 @@ Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 
 Date
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -3201,7 +3145,7 @@ No exemplo, a variável "dAtual" irá receber o dia atual.
 ## dAtual := DayOfMonth(CurrentDate);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função DayOfWeek
 
@@ -3248,7 +3192,7 @@ A  função DaysToExpiration é  uma  função  a  quantidade  de  dias  úteis 
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 DaysToExpiration(Mes : Integer, Ano : Integer)
 
@@ -3294,7 +3238,7 @@ Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 
 ELDate(Ano : Integer, Mes : Integer, Dia : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -3347,7 +3291,7 @@ No exemplo, será atribuído à variável "nData" a data de 2018/11/13 no format
 ## nData := ELDate\_Consol(20181113);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função FindBar
 
@@ -3400,7 +3344,7 @@ Friday
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Sem parâmetros.
 
@@ -3493,7 +3437,7 @@ Cross: Variável booleana que indica se o volume de operações cruzadas (cross 
 
 Rank: Deve ser definido ao final da função entre barras verticais: |RANK|. O primeiro (0) será o maior volume da lista.
 
-## Documentação Módulo Estratégias
+
 
 
 ## Retorno:
@@ -3532,10 +3476,10 @@ dMaxima := HighD(2);
 
 Determina a quantidade desejada de dias anteriores.
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Função HighM
 
@@ -3614,10 +3558,10 @@ yMaxima := HighY(2);
 
 ## Descrição:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Plot(LastCalcDate) ;
 
@@ -3660,7 +3604,7 @@ Sem parâmetros.
 Integer
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -3699,7 +3643,7 @@ No exemplo abaixo, será atribuído à variável "nDia" o último dia(30) do mê
 A função LowD tem como finalidade retornar o valor de mínima de um número determinado de dias atrás.
 
 
-## Documentação Módulo Estratégias
+
 
 ## dMinima := LowD(3);
 
@@ -3746,7 +3690,7 @@ Float
 No exemplo a seguir, será atribuído à variável "mMinima" o valor de mínima do mês anterior.
 
 
-## Documentação Módulo Estratégias
+
 
 ## mMinima := LowM(1);
 
@@ -3785,7 +3729,7 @@ A função LowY tem como finalidade retornar o valor de mínima de um número de
 LowY(QuantidadeAnosAnteriores : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## yMinima := LowY(2);
 
@@ -3828,7 +3772,7 @@ Integer
 No exemplo, a variável "nDia" irá receber número 1, referente ao dia específico da semana.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Month
 
@@ -3913,10 +3857,10 @@ No exemplo a seguir, será atribuído à variável "dAbertura" o valor de abertu
 
 Determina a quantidade desejada de dias anteriores.
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## mAbertura := OpenM(1);
 
@@ -3959,7 +3903,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo a seguir, será atribuído à variável "wAbertura" o valor de abertura de cinco semanas anteriores à semana atual.
 
@@ -4000,7 +3944,7 @@ A  função RS\_BarsPerDay retorna  o  número  estimado  de  barras  de  determ
 Determina a quantidade desejada de anos anteriores.
 
 
-## Documentação Módulo Estratégias
+
 
 n := RS\_BarsPerDay;
 
@@ -4043,7 +3987,7 @@ Integer
 No exemplo, a variável "nDia" irá receber número 6, referente ao dia específico da semana.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Sunday
 
@@ -4088,7 +4032,7 @@ Sem parâmetros.
 Integer
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -4129,7 +4073,7 @@ No exemplo, será atribuído à variável "nHora", a hora de abertura do candle.
 A função TimeToMinutes possui como finalidade efetuar a conversão de um horário em minutos.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -4176,7 +4120,7 @@ Integer
 No exemplo, será atribuído à variável "nData" a data do dia atual.
 
 
-## Documentação Módulo Estratégias
+
 
 ## nData := Today;
 
@@ -4217,7 +4161,7 @@ A função VolumeAtPrice Retorna o volume no preço selecionado para o intervalo
 VolumeAtPrice(Interval : Integer; Offset : Integer = 1; Type : Integer = 0; Standard : Boolean = True; Auction : Boolean = True; Cross : Boolean = True)|Price : Float|
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -4265,7 +4209,7 @@ end;
 A função VolumeD tem como finalidade retornar o volume financeiro de um número determinado de dias atrás.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -4276,7 +4220,7 @@ VolumeD(QuantidadeDiasAnteriores
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 dVolume := VolumeD(6);
 
@@ -4317,7 +4261,7 @@ Float
 No exemplo a seguir, será atribuído à variável "mAbertura" o volume do mês anterior ao atual.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função VolumeW
 
@@ -4364,7 +4308,7 @@ Determina a quantidade desejada de anos anteriores.
 ## Retorno:
 
 
-## Documentação Módulo Estratégias
+
 
 ## Float
 
@@ -4405,7 +4349,7 @@ No exemplo, a variável "nDia" irá receber número 3, referente ao dia específ
 A função Year retorna o ano de uma data específica.
 
 
-## Documentação Módulo Estratégias
+
 
 ## yAtual := Year(CurrentDate);
 
@@ -4446,7 +4390,7 @@ Yesterday
 Sem parâmetro
 
 
-## Documentação Módulo Estratégias
+
 
 ## nYesterday := Yesterday;
 
@@ -4483,7 +4427,7 @@ Integer
 No exemplo, a variável "nTimeExchange" irá receber a data de acordo com o timezone da bolsa.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Candlestick
 
@@ -4525,7 +4469,7 @@ No exemplo, caso seja identificado algum dos padrões(3 White Soldiers ou 3 Blac
 
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função C\_BullEng\_BearEng
 
@@ -4577,7 +4521,7 @@ aux := C\_BullEng\_BearEng(13, oBullishEngulfing, oBearishEngulfing);
 PaintBar(clYellow);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função C\_Doji
 
@@ -4624,7 +4568,7 @@ A função C\_Hammer\_HangingMan identifica a ocorrência de dois tipos de candl
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Comprimento: Tamanho utilizado para calcular a média do corpo do candle.
 
@@ -4679,7 +4623,7 @@ Comprimento: Tamanho utilizado para calcular a média do corpo do candle.
 Percentual: Doji limiar para o (abrir - fechar) como uma percentagem do intervalo da barra.
 
 
-## Documentação Módulo Estratégias
+
 
 oMorningDojiStar: Variável para identificação de padrão(Morning Doji Star). oEveningDojiStar: Variável para identificação de padrão(Evening Doji Star).
 
@@ -4736,7 +4680,7 @@ oEveningStar: Variável para identificação de padrão(Evening Star).
 ## Retorno:
 
 
-## Documentação Módulo Estratégias
+
 
 ## Integer:
 
@@ -4796,7 +4740,7 @@ Identificação(retorno função):
 - 0 - Algum dos padrões foi identificado.
 
 
-## Documentação Módulo Estratégias
+
 
 - 1 - Nenhuma padrão identificado.
 - Identificação(retorno variável: oPiercingLine):
@@ -4841,7 +4785,7 @@ Fator: Determina quantas vezes a sombra do candle deve ser maior que o seu corpo
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, caso o padrão seja identificado, considerando 10(Comprimento) e 2(Fator), será aplicada uma coloração(verde).
 
@@ -4882,7 +4826,7 @@ No exemplo, será atribuído à variável "aux" o retorno do indicador criado.
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função IFR retorna o valor(tipo clássico) do indicador IFR , de acordo com o período.
 
@@ -4963,10 +4907,10 @@ No exemplo, será atribuído à variável "vMed" o valor do indicador Média Mó
 
 vMed := MediaExp(100, Close);
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Função PaintVar
 
@@ -5007,7 +4951,7 @@ Observação: o exemplo com o código fonte está disponível no editor de estra
 WellesSum(Periodo, Integer, SerieReferencia : Serie, Offset : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -5054,7 +4998,7 @@ Float
 Será atribuído à variável "nAvg" o retorno da função AvgPrice.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função BarCount
 
@@ -5138,10 +5082,10 @@ Sem retorno
 
 ## Exemplos:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 No exemplo abaixo, será adicionada uma linha entre os pontos (12/11/2024, 128.000) e (25/11/2024, 125.000), Extrapolando para direita, Com um texto 'Linha de teste', da cor vermelha, no estilo pontilhado com fonte tamanho 8, o texto no canto superior esquero, começando e terminando as 12:00 no candle
 
@@ -5167,14 +5111,14 @@ Integer
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, será aplicada a coloração do Plot no Plot2.
 
 SetPlotColor(1, RGB(200, 200, 200)); SetPlotColor(2, GetPlotColor(1));
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função GetPlotWidth
 
@@ -5221,7 +5165,7 @@ Sem parâmetros.
 Integer
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -5262,7 +5206,7 @@ A função HorizontalLine tem como finalidade, adicionar um estudo horizontal em
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 HorizontalLine (Y : Float; Color : Interger)
 
@@ -5335,10 +5279,10 @@ Boolean
 
 Exemplos:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 No exemplo a seguir, o candle atual será identificado com a coloração amarela.
 
@@ -5379,7 +5323,7 @@ No exemplo abaixo, caso a função Leader seja igual a um, o candle analisado se
 A função MaxBarsBack tem como finalidade percorrer a lista da série, iniciando(índice 0) a partir do primeiro candle criado.
 
 
-## Documentação Módulo Estratégias
+
 
 if (MaxBarsBack = 1) then
 
@@ -5424,7 +5368,7 @@ Integer
 No exemplo, será aplicada uma coloração no candle anterior ao atual.
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Função MedianPrice
@@ -5464,7 +5408,7 @@ A função NoPlot tem como finalidade efetuar a remoção de determinado Plot.
 NoPlot(NumeroPlot : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -5515,7 +5459,7 @@ clLime clYellow
 clBlue
 
 
-## Documentação Módulo Estratégias
+
 
 clFuchsia clAqua clWhite clMoneyGreen clSkyBlue
 
@@ -5557,7 +5501,7 @@ Dado:
 Pode-se utilizar variáveis, funções ou constantes para realizar o desenho do indicador.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Retorno:
 
@@ -5603,7 +5547,7 @@ PlotN(99, OpenD(0)) ;
 
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função PlotText
 
@@ -5650,7 +5594,7 @@ if (close[1] &lt; mediaExp(20, close)[1]) and (close &gt; mediaExp(20, close)) t
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função Range retorna a diferença entre a máxima e a mínima do candle.
 
@@ -5695,7 +5639,7 @@ Float
 No exemplo, a variável "nRL" irá receber o retorno do dado da função RangeLeader.
 
 
-## Documentação Módulo Estratégias
+
 
 ## nRL := RangeLeader;
 
@@ -5734,7 +5678,7 @@ A função SetPlotColor possui como finalidade alterar a coloração de determin
 SetPlotColor(NumeroPlot : Integer, Cor : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -5813,7 +5757,7 @@ A partir da função SetPlotStyle, é possível alterar o estilo da linha de um 
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 SetPlotStyle(NumeroPlot : Integer; Estilo : Integer)
 
@@ -5857,7 +5801,7 @@ SetPlotType(Number : Integer; Type : Integer)
 Number: Número do Plot específico Type: Tipo de visualização 0 - Linha 1 - Histograma
 
 
-## Documentação Módulo Estratégias
+
 
 ## Retorno:
 
@@ -5900,7 +5844,7 @@ No exemplo, será alterada a espessura referente à linha do Plot.
 
 
 
-## Documentação Módulo Estratégias
+
 
 ## TH := TrueHigh;
 
@@ -5939,7 +5883,7 @@ TrueLow
 ## Função TrueHigh
 
 
-## Documentação Módulo Estratégias
+
 
 TL := TrueLow;
 
@@ -5978,7 +5922,7 @@ Float
 No exemplo, a variável "TR" irá receber o valor do indicador True Range.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função TrueRangeCustom
 
@@ -6053,10 +5997,10 @@ No exemplo,será inserida uma linha vertical amarela, para o dia anterior..
 
 ## VerticalLine(CurrentDate-1, clYellow);
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Funcão VerticalLineCustom
 
@@ -6094,7 +6038,7 @@ Além da primeira linha, pintaremos uma outra linha em dois dias atrás de cor v
 
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Função WeightedClose
@@ -6116,7 +6060,7 @@ Sem parâmetros
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -6161,7 +6105,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, a variável "aac" irá receber o volume de quantidade do indicador TR - Acúmulo de Agressão - Saldo.
 
@@ -6200,7 +6144,7 @@ A função AccuDistrW retorna o valor do indicador Acumulação/Distribuição  
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 ## AccuDistrW
 
@@ -6245,7 +6189,7 @@ Float
 No exemplo, a variável "amv" irá receber o valor do indicador Adaptive Moving Average, considerando 10 períodos para o cálculo, com 2 períodos para FastStochastic, e 30 para SlowStochastic.
 
 
-## Documentação Módulo Estratégias
+
 
 ## amv := AdaptiveMovingAverage(10, 2, 30);
 
@@ -6286,7 +6230,7 @@ A função AgressionVolBalance retorna o valor do indicador TR - Volume de Agres
 AgressionVolBalance
 
 
-## Documentação Módulo Estratégias
+
 
 ## avb := AgressionVolBalance;
 
@@ -6327,7 +6271,7 @@ Float
 No exemplo, a variável "avb" irá receber o valor do indicador TR - Volume de Agressão - Compra.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função AgressionVolSell
 
@@ -6412,10 +6356,10 @@ No exemplo, a variável "fAroon" irá receber o valor da linha "Aroon Down", con
 
 ## fAroon := AroonLin(9)|1|;
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Função AroonOsc
 
@@ -6500,10 +6444,10 @@ No exemplo, será atribuído à variável "aux" o retorno do indicador, consider
 
 ## aux := AutoFibonacciCustom(144, 75.5);
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Função AvgAgent
 
@@ -6564,7 +6508,7 @@ A função AvgAgrBuySell retorna o valor do indicador TR - Agressão Média - Co
 AvgAgrBuySell(AlertaVariacoes : Integer, TipoVolume : Integer, TipoDesenho : Integer)|Linha : Integer|
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -6619,7 +6563,7 @@ TipoDesenho: Relação entre compra e venda:
 Linha: Determina qual linha será obtida:
 
 
-## Documentação Módulo Estratégias
+
 
 - 0 - Volume indicador
 - 1 - Avaliar
@@ -6668,7 +6612,7 @@ No exemplo, a variável "avgSep" irá receber o valor do indicador Afastamento M
 ## avgSep := AvgSeparation(21, 1);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função AvgTrueRange
 
@@ -6712,7 +6656,7 @@ A função BalanceAgent retorna o saldo financeiro filtrado por agente . Retorna
 BalanceAgent(AgentID : Integer, Período : Integer )
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -6810,10 +6754,10 @@ No exemplo, a variável "nBear" irá receber o dado do indicador Bear Power, con
 
 A função BollingerBands retorna o valor do indicador Bandas de Bollinger , de acordo com o período e tipo de média desejados.
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Sintaxe:
 
@@ -6873,7 +6817,7 @@ Media:
 TipoMedia:
 
 
-## Documentação Módulo Estratégias
+
 
 - 0 - Aritmética
 - 1 - Exponencial
@@ -6959,10 +6903,10 @@ No exemplo, a variável "nBull" irá receber o valor do indicador Bull Power, co
 
 ## nBull := BullPower(21,9,0)
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Função CCI
 
@@ -7043,7 +6987,7 @@ No exemplo, a variável "nCo" irá receber o valor do indicador Oscilador Chaiki
 
 A função ChainSetup retorna o valor do indicador ChainSetup .
 
-## Documentação Módulo Estratégias
+
 
 
 ## Sintaxe:
@@ -7090,10 +7034,10 @@ Float
 
 ## Exemplos:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 No exemplo, será atribuído à variável "cPriceWave", o retorno do indicador, considerando 15 ticks para o cálculo.
 
@@ -7130,7 +7074,7 @@ No exemplo, será atribuído à variável "cWeisWave", o retorno do indicador, c
 A função ContadorDeCandle contabiliza e sinaliza de forma numérica e organizada no gráfico o número de cada candle.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -7178,7 +7122,7 @@ No exemplo, a variável "nDB" irá receber os valores(Dado: Venda) do indicador 
 
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função DecisionPoints
 
@@ -7231,7 +7175,7 @@ No exemplo, a variável "DecisionP" irá receber o dado referente à máxima.
 ## DecisionP := DecisionPoints(0, 1);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função DiDiIndex
 
@@ -7286,7 +7230,7 @@ No exemplo, a variável "fdIndex " irá receber o valor da "linha 2", consideran
 ## fdIndex := DidiIndex(8,0,3,0,20,0)|1|;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função DiPDiM
 
@@ -7327,7 +7271,7 @@ A função DivergenceDetector retorna os pontos de alta ou baixa (PH ou PL) do a
 DivergenceDetector(LeftPivot : Integer, RightPivot : Integer, MACD : Boolean = 0, MACDHistogram : Boolean = 0, RSI : Boolean = 0, Stochastic: Boolean = 0, CCI: Boolean = 0, Momentum: Boolean = 0, OBV: Boolean = 0, Diosc: Boolean = 0, VWmacd: Boolean = 0, ChaikinMoneyFlow: Boolean = 0, MoneyFlowIndex: Boolean = 0)|Index : Integer|
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -7379,7 +7323,7 @@ No exemplo, a variável x irá receber o valor relacionado a PH/PL do candle a s
 ## x := DivergenceDetector(5, 5)|0|;
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo abaixo, a variável x irá receber o valor relacionado à soma dos indicadores que detectaram alguma divergência, ou nenhuma, no candle analisado. Nesse exemplo abaixo, estamos considerando apenas os indicadores MACD MACD Histograma , e RSI para o cálculo.
 
@@ -7422,7 +7366,7 @@ No exemplo, a variável "nDC" irá receber o valor da linha inferior do indicado
 A função DTOscillator retorna o valor do indicador DT Oscillator , conforme os parâmetros desejados.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -7476,7 +7420,7 @@ A função Envelope retorna o valor do indicador Envelope , de acordo com o per�
 Envelope(Percentual : Float, PeriodoMedia : Integer, TipoMedia : Integer)|Linha : Integer|
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -7534,7 +7478,7 @@ ModoCalculo: Tipo de média:
 0 - Aritmética
 
 
-## Documentação Módulo Estratégias
+
 
 - 1 - Exponencial
 - 2 - Welles Wilder
@@ -7586,7 +7530,7 @@ TipoMedia: Tipo da média a ser calculada pelo indicador:
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -7621,7 +7565,7 @@ No exemplo, a variável "vFinanceiro" irá receber o valor do indicador Volume F
 vFinanceiro := FinancialVol(False, False);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função ForceIndex
 
@@ -7667,7 +7611,7 @@ FrassonATR(Fator : Float, PeriodoMaxMin : Integer, PeriodoATR : Integer)|Linha :
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Fator: Fator de multiplicação do ATR utilizado no momento do cálculo do indicador.
 
@@ -7721,7 +7665,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, a variável "nFrasson" irá receber o valor da linha superior do indicador Frasson VH, considerando 0,03(Fator), 15(Período Máxima/Mínima) e 50(Período VH) para o cálculo.
 
@@ -7762,7 +7706,7 @@ A função FuraChao retorna o valor do indicador Fura-Chão , de acordo com o co
 FuraChao(Coeficiente : Float, Deslocamento : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -7807,7 +7751,7 @@ No exemplo, a variável "fTeto" irá receber o valor do indicador Fura-Teto, con
 ## fTeto := FuraTeto(0.14, 1);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função HeikinAshi
 
@@ -7850,7 +7794,7 @@ No exemplo, a variável "HeikinAshi" irá receber o valor de fechamento do indic
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função HiloActivator retorna o valor do indicador HiLo Activator , de acordo com o período desejado.
 
@@ -7903,7 +7847,7 @@ TipoMedia: Determina qual média será considerada:
 0 - Aritmética
 
 
-## Documentação Módulo Estratégias
+
 
 - 1 - Exponencial
 - 2 - Welles Wilder
@@ -7943,7 +7887,7 @@ Float
 No exemplo, será atribuído à variável "vHSI" o retorno da função.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função HullMovingAverage
 
@@ -7984,7 +7928,7 @@ IchimokuCloud(TenkanSen  : Integer, KijunSen : Integer, SenkouSpanB : Integer)|L
 TenkanSen: Utilizado no momento do cálculo do indicador. KijunSen: Utilizado no momento do cálculo do indicador. SenkouSpanB: Utilizado no momento do cálculo do indicador. Linha: Determina qual linha será obtida:
 
 
-## Documentação Módulo Estratégias
+
 
 0 - Tenkan-Sen
 
@@ -8041,7 +7985,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, a variável "nIV" irá receber o valor do indicador Volatilidade Implícita, utilizando o modelo Black &amp; Scholes.
 
@@ -8085,8 +8029,6 @@ No exemplo, será atribuído à variável "nCh" o valor da linha inferior do ind
 
 ## nCh := KeltnerCH(2.0, 20, 1)|1|;
 
-
-## Documentação Módulo Estratégias
 
 ## Função KVO
 
@@ -8133,7 +8075,7 @@ A função LinearRegressionChannel retorna os dados do indicador Canal de Regres
 LinearRegressionChannel(Periodo : Integer; UsarDesvioSuperior : Boolean; DesvioSuperior : Float; UsarDesvioInferior : Boolean; DesvioInferior : Float)|Linha : Integer|
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -8186,7 +8128,7 @@ Float
 No exemplo, a variável "vLSV" irá receber o valor do indicador L&amp;S Volatility Index.
 
 
-## Documentação Módulo Estratégias
+
 
 ## vLSV := LSVolatilityIndex;
 
@@ -8235,7 +8177,7 @@ A função MFI retorna o valor do indicador Market Facilitation Index .
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 MFI
 
@@ -8278,7 +8220,7 @@ No exemplo, será atribuído à variável "vMIMA" o valor do indicador MIMA, con
 vMIMA := MIMA(10);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função MIMAROC
 
@@ -8323,7 +8265,7 @@ TipoMedia: Determina qual média será considerada:
 0 - Aritmética
 
 
-## Documentação Módulo Estratégias
+
 
 - 1 - Exponencial
 - 2 - Welles Wilder
@@ -8364,7 +8306,7 @@ No exemplo, a variável "nMS" irá receber o valor do indicador Momento Estocás
 ## nMS := MomentumStochastic(14);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função MoneyFlow
 
@@ -8409,7 +8351,7 @@ Periodo: Período utilizado no momento do cálculo do indicador.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -8451,7 +8393,7 @@ No exemplo, será atribuído à variável "nBF" o dado do histograma.
 A função NelogicaPullBackFinder retorna o valor do indicador Nelogica Pullback Finder , conforme o dado desejado(linha e histograma).
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -8497,7 +8439,7 @@ Float
 No exemplo, será atribuído à variável "nWW" o retorno da função, considerando 3 períodos para o cálculo.
 
 
-## Documentação Módulo Estratégias
+
 
 ## nWW := NelogicaWeisWave(3);
 
@@ -8538,7 +8480,7 @@ OBVAvg(Periodo : Integer, TipoMedia : Integer)
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 nOBV := OBVAvg(10, 3);
 
@@ -8587,7 +8529,7 @@ Float
 No exemplo, a variável "nOBTR" irá receber o valor do indicador On-Balance True Range.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função OpenDaily
 
@@ -8632,7 +8574,7 @@ Sem parâmetros.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -8671,7 +8613,7 @@ No exemplo, será atribuído à variável "nSAR" o valor do indicador SAR Parab�
 A função Phibo retorna o valor do indicador PhiCube - Phibo Line .
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -8720,7 +8662,7 @@ Linha: Determina qual linha será obtida:
 True(Três Linhas):
 
 
-## Documentação Módulo Estratégias
+
 
 0 - Pivot
 
@@ -8783,7 +8725,7 @@ InitialDate: Utilizado para informar períodos customizados de análise, data in
 EndDate: Utilizado para informar períodos customizados de análise, data final da janela de análise.
 
 
-## Documentação Módulo Estratégias
+
 
 ## dPower := PowerMeter(osBuy);
 
@@ -8824,7 +8766,7 @@ No exemplo, será atribuído à variável "vPriceNery" o retorno da chamada.
 Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função PriceOsc retorna o valor do indicador Oscilador de Preços , de acordo com os períodos e tipos de médias desejados.
 
@@ -8871,7 +8813,7 @@ A função PriceVolumeTrend retorna o valor do indicador Tendência Preço/Volum
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 ## PriceVolumeTrend
 
@@ -8918,7 +8860,7 @@ Float
 No exemplo, será atribuído à variável "nPrior" o valor de fechamento do período anterior.
 
 
-## Documentação Módulo Estratégias
+
 
 ## nPrior := PriorCote(0);
 
@@ -8965,7 +8907,7 @@ A função PTAXFuturo retorna os dados do indicador TR - PTAX Futuro .
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 PTAXFuturo[Dado : Integer]
 
@@ -9012,7 +8954,7 @@ VolumeProjetado: Determina se o volume irá considerar o dado projetado. Agresso
 ## Retorno:
 
 
-## Documentação Módulo Estratégias
+
 
 Float
 
@@ -9053,7 +8995,7 @@ No exemplo, a variável "nRafi" irá receber o dado do indicador específico.
 A função Ravi retorna o valor do indicador Ravi , de acordo com os períodos desejados.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -9096,7 +9038,7 @@ Float
 No exemplo, será atribuído à variável "nRBG", o retorno da chamada de função.
 
 
-## Documentação Módulo Estratégias
+
 
 nRBG:= RBG;
 
@@ -9141,7 +9083,7 @@ No exemplo, a variável "renkoV" irá receber o valor da linha RenkoV2- do indic
 A função ROC retorna o valor do indicador ROC , de acordo com os períodos e tipo de média desejados.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -9231,10 +9173,10 @@ No exemplo, será atribuído à variável "nRS" o valor do indicador IFR Estocá
 
 A função SafeZoneDownTrend retorna o valor do indicador Stop SafeZone DownTrend , de acordo com os parâmetros desejados .
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Sintaxe:
 
@@ -9283,7 +9225,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, será atribuído à variável "aux" o dado do indicador Stop SafeZone UpTrend, considerando 2.0(Multiplicador), 10(Período) e 0(Deslocamento) para o cálculo.
 
@@ -9326,7 +9268,7 @@ No exemplo, será atribuído à variável "vSanto" o dado do sinal, considerando
 A função SlowStochastic retorna o valor do indicador Estocástico Lento , de acordo com o período desejado.
 
 
-## Documentação Módulo Estratégias
+
 
 Observação: Os parâmetros PeriodoMedia e TipoMedia são opcionais, caso não sejam determinados, serão utilizados os valores 14 e 1 respectivamente.
 
@@ -9370,7 +9312,7 @@ SOMOSRENKOTRENDMPONTO |Linha : Integer|
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Linha: Determina qual linha será obtida:
 
@@ -9423,7 +9365,7 @@ Dado: Determina o dado que será obtido:
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -9470,7 +9412,7 @@ No exemplo, será atribuído à variável "nTendencyTracker", o retorno da linha
 ## nTendencyTracker:= TendencyTracker(5)|1|;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Tilson
 
@@ -9551,10 +9493,10 @@ No exemplo, será atribuído à variável "alertT" o retorno da função, consid
 
 A função TopBottomDetector retorna o valor do indicador Detector de Topos e Fundos, de acordo com o período desejado.
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## TBD := TopBottomDetector(2);
 
@@ -9597,7 +9539,7 @@ Float
 No exemplo, a variável "n" irá receber o dado do indicador Negócios.
 
 
-## Documentação Módulo Estratégias
+
 
 ## n := Trades;
 
@@ -9647,7 +9589,7 @@ No exemplo, será atribuído à variável "nTrendCloud", o retorno do indicador.
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função TrendSniper retorna o valor do indicador TrendSniper , de acordo com os parâmetros desejados.
 
@@ -9701,7 +9643,7 @@ A função TRIX retorna o valor do indicador TRIX , de acordo com o período e t
 TRIX(Media : Integer, TipoMedia : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -9750,7 +9692,7 @@ TipoMedia: Determina qual média será considerada:
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -9789,7 +9731,7 @@ No exemplo, será atribuído o retorno da função na variável "2mvAgressao".
 A função TwoMVPower retorna o valor do indicador 2MV Power , de acordo com os parâmetros desejados.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Sintaxe:
 
@@ -9844,7 +9786,7 @@ Factorpos: Parâmetro relacionado ao campo factorpos do indicador. Factorneg :  
 ## Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -9891,7 +9833,7 @@ Valerie(Periodo : Integer; Offset : Integer)
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Periodo: Período utilizado no cálculo do indicador. Offset : Offset considerado.
 
@@ -9935,7 +9877,7 @@ Float
 No exemplo, será atribuído à variável "aux" o retorno da função, a constante AgentID terá como filtro o agente 3 e o volume será diário.
 
 
-## Documentação Módulo Estratégias
+
 
 const
 
@@ -9984,7 +9926,7 @@ No exemplo, a variável "nVSS" irá receber o valor do indicador VSS, consideran
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função VWAP retorna o valor do indicador VWAP , de acordo com a periodicidade desejada.
 
@@ -10032,7 +9974,7 @@ Date: Time: Horário inicial.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -10073,7 +10015,7 @@ nVWAP := VWAPMonthly;
 A função VWAPWeekly retorna o valor do indicador VWAP Semanal .
 
 
-## Documentação Módulo Estratégias
+
 
 nVWAP := VWAPWeekly;
 
@@ -10118,7 +10060,7 @@ Float
 No exemplo, a variável "nVWMA" irá receber o valor do indicador VWMA, considerando 10 períodos para o cálculo.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função WAverage
 
@@ -10195,10 +10137,10 @@ No exemplo, será atribuído à variável "vMed" o valor do indicador Média Mó
 
 vMed := xAverage(Close, 100);
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Livro
 
@@ -10241,7 +10183,7 @@ AskSize
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 qtdAsk := AskSize;
 
@@ -10280,7 +10222,7 @@ Float
 No exemplo, será atribuído à variável "bid" o valor do topo(melhor oferta de compra) do livro.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função BidSize
 
@@ -10363,10 +10305,10 @@ Ambos  os  exemplos  atribuem  a  quantidade  de  ofertas  de  compra  para  a  
 var buy_count : Integer; begin buy_count := BuyOfferCount; end;
 ```
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Exemplo 02:
 
@@ -10402,7 +10344,7 @@ Para o segundo exemplo, a distinção está na especificação do Asset que ser�
 ## Exemplo 01 (Variação 01):
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Exemplo 02 (Variação 02):
@@ -10437,7 +10379,7 @@ String
 No primeiro exemplo, para o último candle, será visualizado o nome do ativo selecionado no gráfico, a bolsa a qual pertence, e o spread do book.
 
 
-## Documentação Módulo Estratégias
+
 
 No segundo, será identificada a bolsa (F) vinculada ao Asset definido (WDO), independentemente do ativo selecionado.
 
@@ -10470,7 +10412,7 @@ Boolean
 No exemplo, caso o ativo pertença ao BMF, será plotado o preço da melhor oferta de venda.
 
 
-## Documentação Módulo Estratégias
+
 
 if(IsBMF) then
 
@@ -10513,7 +10455,7 @@ A função MinPriceIncrement retorna o incremento mínimo do preço do ativo.
 MinPriceIncrement
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -10558,7 +10500,7 @@ Ambos  os  exemplos  atribuem  a  quantidade  de  ofertas  de  venda  para  a  v
 var
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Exemplo 02:
@@ -10591,7 +10533,7 @@ Ambos os exemplos atribuem a quantidade de compras para a variável 'buy\_qtd', 
 ## Exemplo 01:
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Exemplo 02:
@@ -10624,7 +10566,7 @@ Ambos os exemplos atribuem a quantidade de vendas para a variável 'sell\_qtd', 
 ## Exemplo 01:
 
 
-## Documentação Módulo Estratégias
+
 
 
 ## Exemplo 02:
@@ -10655,7 +10597,7 @@ Float
 No exemplo, a variável "n" irá receber o módulo(4) do valor -4.
 
 
-## Documentação Módulo Estratégias
+
 
 ## n := ABS(-4);
 
@@ -10696,7 +10638,7 @@ Ceiling(Numero : Float)
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Numero: Número que será arredondado.
 
@@ -10735,7 +10677,7 @@ No exemplo, será atribuído à variável "nComb" o número de grupos da combina
 ## nComb := Combination(4,2);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Cos
 
@@ -10780,7 +10722,7 @@ Valor: Valor ou variável para obter o Cosseno.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -10821,7 +10763,7 @@ A função Cum acumula o valor de uma série de dados, desde a primeira barra at
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 Cum(SerieDeDados : Serie)
 
@@ -10866,7 +10808,7 @@ No seguinte exemplo, a função Exp recebe o valor de "2" e irá retornar o valo
 n := Exp(2);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função ExpValue
 
@@ -10951,10 +10893,10 @@ No exemplo, a variável "nFatorial" irá receber o fatorial do número 4.
 
 ## Descrição:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## d := FastD(14);
 
@@ -10997,7 +10939,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo, a variável "k" irá receber o retorno da função FastK, considerando 14 períodos para o cálculo.
 
@@ -11042,7 +10984,7 @@ No exemplo, será atribuído à variável "KCustom" o retorno da função FastKC
 A função Floor possui como finalidade retornar o maior valor inteiro menor que um número determinado.
 
 
-## Documentação Módulo Estratégias
+
 
 m := Floor(-6.1);
 
@@ -11089,7 +11031,7 @@ Float
 No exemplo, será atribuído à variável "dec" o valor -0.59.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função GCD
 
@@ -11130,7 +11072,7 @@ HarmonicMean(SerieDados  : Serie, Periodo : Integer)
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 SerieDados: Série utilizada para o cálculo. Periodo: Período utilizado no momento do cálculo.
 
@@ -11171,7 +11113,7 @@ No exemplo abaixo, usamos a função Highest para retornar a maior abertura dent
 ## Plot(Highest(Open, 9)) ;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Funcão HighestBar
 
@@ -11218,7 +11160,7 @@ Valor:
 Número para obter a parte inteira.
 
 
-## Documentação Módulo Estratégias
+
 
 ## aux := IntPortion(7.52);
 
@@ -11259,7 +11201,7 @@ No exemplo, será atribuído à variável "vLn" o ln de 5(1,6).
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função Lowest tem como funcionalidade retornar ao usuário o menor valor da série estipulada por ele, dentro de um período determinado.
 
@@ -11340,10 +11282,10 @@ dMax := Max(10.0, 20);
 
 ## Descrição:
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 A função MidPoint retorna a média entre o maior e o menor valor encontrados no período.
 
@@ -11394,7 +11336,7 @@ Float
 ## Exemplos:
 
 
-## Documentação Módulo Estratégias
+
 
 No exemplo a seguir, será atribuído à variável "dMin" valor 10.0, que é o menor valor entre 10 e 20.
 
@@ -11437,7 +11379,7 @@ No exemplo a seguir, será atribuído à variável "tMin" o total de minutos(8.6
 tMin := MinutesIntoWeek(6, 0000);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função MinutesToTime
 
@@ -11482,7 +11424,7 @@ Dividendo: Número referente ao Dividendo.
 Divisor: Número que será o divisor.
 
 
-## Documentação Módulo Estratégias
+
 
 res := Mod(10, 3);
 
@@ -11523,7 +11465,7 @@ No exemplo, a variável "nNeg" irá receber o retorno(-5) da função.
 ## Descrição:
 
 
-## Documentação Módulo Estratégias
+
 
 A função NumUnits retorna o número de contratos/ações de um certo investimento.
 
@@ -11568,7 +11510,7 @@ Periodo: Período anterior para a comparação com o dado da série atual.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -11609,7 +11551,7 @@ A função Permutation calcula o número de permutações para um determinado n�
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 Permutation(Numero : Integer, NumeroObjetos : Integer)
 
@@ -11654,7 +11596,7 @@ No exemplo, a variável "n" irá receber o módulo(4) do valor -4.
 ## n := Pos(-4);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Power
 
@@ -11695,7 +11637,7 @@ A função PriceOscillator retorna o valor do indicador Price Oscillator , de ac
 PriceOscillator(SerieDados  : Serie, ComprimentoRapido : Integer, ComprimentoLento : Integer)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -11736,7 +11678,7 @@ No exemplo a seguir, a função Random irá gerar números aleatórios entre 0 a
 aux := Random(5);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função RateOfChange
 
@@ -11779,7 +11721,7 @@ Round(Valor : Float)
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 Valor: Número(variável ou constante) com casas decimais.
 
@@ -11818,7 +11760,7 @@ No exemplo abaixo(ativos Bovespa), ao aplicar a função para o valor 27.626, se
 ## nRound2 := Round2Fraction(27.626);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Sign
 
@@ -11861,7 +11803,7 @@ A função Sin tem como objetivo retornar o Seno de um valor em radianos.
 Sin(Valor : Float)
 
 
-## Documentação Módulo Estratégias
+
 
 ## nSeno := Sin(180);
 
@@ -11902,7 +11844,7 @@ Float
 No exemplo a seguir, será atribuído à variável "sSeno" o Seno do valor 45 em graus(0,71).
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função SlowD
 
@@ -11947,7 +11889,7 @@ Periodo: Período utilizado no momento do cálculo do indicador.
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -11988,7 +11930,7 @@ A função Square tem como funcionalidade retornar ao usuário o valor de um det
 ## Sintaxe:
 
 
-## Documentação Módulo Estratégias
+
 
 Square(Valor : Float)
 
@@ -12035,7 +11977,7 @@ Float
 No exemplo, a variável "sd" irá receber o retorno da função StdDevs, considerando o fechamento(Close) e 20(Períodos) para o cálculo.
 
 
-## Documentação Módulo Estratégias
+
 
 ## sd := StdDevs(Close, 20);
 
@@ -12076,7 +12018,7 @@ A função Tangent tem como objetivo retornar ao usuário a Tangente de um valor
 Tangent(Valor : Float)
 
 
-## Documentação Módulo Estratégias
+
 
 ## Parâmetros:
 
@@ -12117,7 +12059,7 @@ No exemplo, a variável "aux" irá receber o retorno da função TriAverage, con
 ## aux := TriAverage(High, 20);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função UlcerIndex
 
@@ -12196,10 +12138,10 @@ No exemplo, a variável "difVol" irá receber o valor do indicador VolumeOsc, co
 
 ## difVol := VolumeOsc(9, 21);
 
-## Documentação Módulo Estratégias
 
 
-## Documentação Módulo Estratégias
+
+
 
 ## Função VolumeROC
 
@@ -12242,7 +12184,7 @@ BoolToString(bValue : Boolean)
 bValue : Valor booleano para ser transformado em string
 
 
-## Documentação Módulo Estratégias
+
 
 ## Retorno:
 
@@ -12279,7 +12221,7 @@ if CompareFloat(dMedia1, dMedia2, 4) = 1 then dResult1 := dMedia1;
 if CompareFloat(dMedia2, dMedia1, 5) = GreaterThanValue then dResult2 := dMedia2;
 
 
-## Documentação Módulo Estratégias
+
 
 ## Opções
 
@@ -12326,7 +12268,7 @@ No  exemplo,  a  variável  "opD"  irá  receber  a  variação,  considerando  
 ## opD := Delta(13, 16.47, 17.25, 0.1, 0.25, optCall);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Gamma
 
@@ -12377,7 +12319,7 @@ No  exemplo,  será  atribuido  à  variável  "opG",  a  variação,  considera
 opG := Gamma(9, 11.08, 11.94, 0.2, 0.3, optCall);
 
 
-## Documentação Módulo Estratégias
+
 
 ## Função Rho
 
@@ -12432,7 +12374,7 @@ Theta(DaysLeft : Integer, StrikePr : Float, AssetPr : Float, Rate100 : Float, Vo
 ## Parâmetros:
 
 
-## Documentação Módulo Estratégias
+
 
 DaysLeft: Dias uteis até o vencimento da opção
 
@@ -12485,7 +12427,7 @@ DaysLeft: Dias uteis até o vencimento da opção StrikePr: Preço do exercício
 Float
 
 
-## Documentação Módulo Estratégias
+
 
 ## Exemplos:
 
@@ -12514,7 +12456,7 @@ Sem parâmetros.
 Void: Sem retorno.
 
 
-## Documentação Módulo Estratégias
+
 
 ## Anexo
 
@@ -12561,7 +12503,7 @@ End;//Fim do fluxo de execução
 
 
 
-## Documentação Módulo Estratégias
+
 
 Como alternativa, é aconselhável usar o código abaixo. Desta forma quando existir posição as ordens covers serão enviadas.
 

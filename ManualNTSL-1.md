@@ -1,56 +1,3 @@
-
-Todos 05 tópicos
-
-
-
-## Sumário
-
-| Introdução                                  |   3 |
-|---------------------------------------------|-----|
-| Estrutura de uma Estratégia                 |   3 |
-| Área de declaração de parâmetros de entrada |   4 |
-| Área de declaração de variáveis e funções   |   5 |
-| Área de código                              |   5 |
-| Fluxo de Execução de uma Estratégia         |   5 |
-| Variáveis, tipos de dados e constantes      |   8 |
-| Tipos de dados                              |   8 |
-| Séries de dados                             |   9 |
-| Arrays                                      |   9 |
-| Correlação de múltiplos ativos              |  10 |
-| Acessando dados anteriores                  |  12 |
-| Constantes                                  |  13 |
-| Controle de Fluxo                           |  14 |
-| If then else                                |  14 |
-| For (To / DownTo) Do                        |  15 |
-| While                                       |  16 |
-| Repeat                                      |  17 |
-| Operadores matemáticos                      |  18 |
-| Operadores lógicos                          |  18 |
-| Funções                                     |  19 |
-| Criando Funções (Sintaxe)                   |  21 |
-| Funções de biblioteca                       |  22 |
-| Funções Matemáticas                         |  22 |
-| Funções Gráficas                            |  22 |
-| Criando uma estratégia de execução          |  25 |
-| Criando uma automação                       |  28 |
-| Opções de entrada                           |  30 |
-| Modo de Execução                            |  30 |
-| Opções de saída                             |  33 |
-| Risco                                       |  33 |
-| Segurança                                   |  34 |
-| Acompanhamento                              |  36 |
-| Regras de Execução                          |  39 |
-| Abrir Estratégias                           |  43 |
-| Gerenciador de Estratégias                  |  44 |
-| Exportar / Importar Estratégias             |  44 |
-| Criar Regra de Alarme                       |  46 |
-| Screening                                   |  48 |
-| Editor de Estratégias                       |  51 |
-| Anexo                                       | 318 |
-| Exemplos de funcionamento de estratégias    | 318 |
-
-
-
 ## Introdução
 
 A  NTSL  (Nelogica  Trading  System  Language)  é  uma  poderosa  linguagem  criada  com  um  único propósito:  permitir  o  desenvolvimento  dos  melhores  e  mais eficientes  sistemas  algorítmicos  de operação. A Nelogica oferece juntamente com a NTSL um ambiente de criação pioneiro e revolucionário chamado  AlgoTools.  Com  o  AlgoTools  é  possível  codificar,  testar  e  simular  com  grande  agilidade qualquer estratégia de operação. Na NTSL, o usuário encontra uma grande facilidade no momento de criação de suas estratégias, a possibilidade de criar toda ela em português, havendo assim, a facilidade e fácil entendimento da estratégia criada.
@@ -62,12 +9,14 @@ Observe o trecho de código abaixo que representa o indicador média móvel. Ess
 
 
 
+
 A área de parâmetros de entrada compreende toda a região entre a palavra reservada input (parâmetro) e a palavra reservada var. A área de variáveis e funções começa com a palavra var e estende-se até a palavra begin (inicio) . Finalmente, a região de código inicia-se com a palavra reservada begin (inicio) e finaliza na palavra end (fim) , conforme imagem abaixo:
 
 
 ## Área de declaração de parâmetros de entrada
 
 Na área de declaração de parâmetros de entrada informamos todos os parâmetros externos que a estratégia usará. Esses parâmetros são fundamentais, pois:
+
 
 
 
@@ -102,6 +51,7 @@ Nesta parte descreve-se o código propriamente dito, ou seja, as regras que util
 
 
 
+
 Sendo  assim,  a  sequência  de  comandos existente na área de código será executada uma vez para cada candle existente. Para cada candle, será executado o código da estratégia em um loop implícito. A regra em pseudocódigo é, portanto:
 
 - ● Tendo uma série de dados X de tamanho N;
@@ -125,7 +75,9 @@ Abaixo, um exemplo de como uma variável arbitrária 'nValor' funcionaria caso o
 
 
 
+
 Porém, caso o código esteja sendo executado em um candle no passado, o nValor[0] seria referente ao candle atual do processamento, e não ao último candle como no exemplo passado. Os outros candles também seriam  acessados  com  base no  candle  que está  sendo  processado  no  momento,  como no exemplo abaixo.
+
 
 
 
@@ -147,6 +99,7 @@ Serie Representa uma série de dados.
 A  NTSL  suporta  a  conversão  implícita  de  valores  Float  a  Inteiros,  isto  é,  atribuir  um  valor  Float diretamente a um valor Integer. O valor inteiro será o valor do ponto flutuante, descartandoas casas decimais. Por exemplo, se eu atribuir 2.99'ou 2.35 a um inteiro, o valor do inteiro será 2. Para outros comportamentos de arredondamento, a linguagem disponibiliza as funções Ceiling, Floor e Round. Para mais detalhes sobre essas funções, consulte esse mesmo manual na seção de funções.
 
 As variáveis na linguagem oferecem uma flexibilidade muito maior do que na maioria dos sistemas de programação conhecidos.
+
 
 
 
@@ -187,6 +140,7 @@ A fim de exemplificação, segue um exemplo de declaração de um Array  estáti
 
 
 
+
 ## Correlação de múltiplos ativos
 
 É possível ainda acessar os dados, ao utilizar o recurso Asset , onde é necessário parametrizar o ativo específico, e a bolsa a qual pertence. As bolsas visualizadas na plataforma dependem se o usuário possui acesso a elas. Na documentação na plataforma está disponível, na aba constantes, apenas os feeds que o usuário terá acesso.
@@ -217,6 +171,7 @@ WDOFUT = Asset("WDOFUT", feedBMF);
 
 
 
+
 Além do acesso às séries de dados, pode-se retornar o ticker (String) e bolsa (String) do Asset declarado, a partir das funções GetAsset e GetFeed:
 
 
@@ -227,6 +182,7 @@ A seguir, um exemplo de coloração, onde será aplicada a cor verde, caso o fec
 A coloração vermelha será aplicada, caso o fechamento do WDO estiver abaixo da média, e o último preço do WIN acima de sua média.
 
 A coloração cinza será identificada, caso não sejam satisfeitas as condições.
+
 
 
 
@@ -249,6 +205,7 @@ A linha de código acima está atribuindo o valor da variável Preco[1] para a v
 | 05/10/2010 | Preco[0]  | 12,43   |
 
 Portanto, Preco[1] refere-se ao valor de ontem do preço de fechamento (sResult vale então 12,40 em nosso exemplo). Dessa forma, o número inteiro que especificarmos entre colchetes indica ao sistema quantos períodos no passado deve-se acessar a informação.
+
 
 
 
@@ -276,6 +233,7 @@ clAqua ou clAzulClaro - Cor azul-claro clBlack ou clPreto - Cor preta clBlue ou 
 
 
 
+
 ## Controle de Fluxo
 
 As instruções de fluxo são utilizadas para administrar a sequência de execução das instruções dentro de um programa. A NTSL apresenta três tipos desse tipo:
@@ -291,6 +249,7 @@ A seguir um exemplo de coloração de candles de acordo com a condição present
 
 
 Se o valor de fechamento da barra atual (Close equivale a Close[0]) for igual ao fechamento da barra anterior  (Representado  por  Close[1])  executa-se  o  código  que  segue  a  palavra  reservada THEN (ENTÃO) .  Caso contrário, o sistema executa o código subsequente até chegar na palavra reservada ELSE (SENÃO) .
+
 
 
 
@@ -317,6 +276,7 @@ A fim didático, segue um exemplo de cálculo de fatorial, utilizando as duas es
 
 
 
+
 ## For DownTo Do:
 
 
@@ -332,6 +292,7 @@ No código a seguir, reescrevemos o indicador média móvel utilizando a instru�
 
 
 
+
 ## Repeat
 
 Este comando difere-se do For e While, no sentido de que a condição será testada no final da estrutura, e não no início, portanto, as instruções do bloco serão executadas pelo menos uma vez.
@@ -339,6 +300,7 @@ Este comando difere-se do For e While, no sentido de que a condição será test
 ## Exemplo:
 
 A fim de comparação com as outras estruturas já abordadas, segue o exemplo de cálculo de fatorial:
+
 
 
 
@@ -375,6 +337,7 @@ Representado pela palavra reservada and (e) , retornará TRUE somente quando as 
 
 
 
+
 | Condição   | AND   | Condição 2   | Resultado   |
 |------------|-------|--------------|-------------|
 | FALSE      | AND   | FALSE        |             |
@@ -396,6 +359,8 @@ Representado pela palavra reservada or (ou) , retornará TRUE (verdadeiro) sempr
 ## Funções
 
 Conforme visto, funções são declaradas e descritas na área de declaração de variáveis e funções, abaixo um exemplo de funções:
+
+
 
 
 
@@ -442,6 +407,8 @@ Esta  funcionalidade  denominada PaintBar(cor) permite  ao  usuário,  colorir  
 
 
 
+
+
 ## Back-Testing
 
 A funcionalidade de Back-testing permite ao usuário avaliar uma determinada estratégia, teoria ou modelo através de uma análise de dados históricos.
@@ -477,7 +444,9 @@ Ao  abrir  o  Editor  de  Estratégias,  você  pode  criar  sua  estratégia  d
 
 
 
+
 Sugerimos que você utilize a função Nova estratégia, e selecione exemplos de estratégias de execução se você não estiver familiarizado com programação ou com o Editor de Estratégias
+
 
 
 
@@ -489,9 +458,11 @@ Abaixo é apresentado um exemplo de estratégia, utilizando o indicador IFR/RS, 
 
 
 
+
 ## Criando uma automação
 
 Para criar uma nova automação basta abrir a interface de controle e localizar o botão 'Nova Automação' localizada no menu superior da janela (indicado pelo número 1 na imagem), este botão estará sempre disponível para e visível na janela. No entanto, caso ainda não possua nenhuma automação criada, o mesmo botão 'Nova Automação' será apresentado em destaque no centro da tela.
+
 
 
 
@@ -524,6 +495,7 @@ Há dois modos de execução: Realizar envio de ordens no fechamento do candle e
 
 
 
+
 ## Ordens no Fechamento do Candle
 
 Esta é a configuração padrão do modo de execução da automação e é a que traz maior semelhança com as operações realizadas por meio do backtest no Editor de Estratégias. Para ativar este modo selecione a opção 'Realizar envio de ordens no fechamento do candle'.
@@ -533,6 +505,7 @@ A cada fechamento de candle, o código para envio de ordens é reavaliado e se t
 Ordens que aumentem a exposição para o mercado e foram enviadas ao final de um candle e que não forem executadas até o final do candle seguinte serão canceladas ou editadas quando o próximo candle finalizar, de acordo com a estratégia do usuário. Uma vez que, apenas sabemos que um candle foi finalizado quando o próximo iniciar em gráficos atemporais, poderá ocorrer a execução de ordens em um candle subsequente caso o cancelamento chegue na bolsa após a execução da mesma.
 
 É importante ressaltar que a automação poderá apresentar divergências em relação ao backtest ao ser comparado com a execução da automação em uma conta de simulação (ordens simuladas) ou conta
+
 
 
 
@@ -558,6 +531,7 @@ O temporizador de envio de ordens só atualiza quando alguma modificação de or
 
 
 
+
 { deprecated } A configuração antiga de número de ordens por candle não existe mais, vimos que ela mais atrapalhava o usuário do que ajudava, e escolhemos seguir em uma estratégia mais segura e inteligente.
 
 Caso você havia configurado mais de uma ordem por candle para sua automação, a sua configuração irá automaticamente para 'Permitir múltiplos envios e alterações de ordens para a mesma barra', caso estivesse configurado para apenas uma, essa opção virá desselecionada.
@@ -579,6 +553,7 @@ Seguindo as configurações temos as configurações de risco da automação. Na
 
 
 
+
 com um objetivo de ganho, ou um limite de perda. Caso você não deseje encerrar a posição quando atingir um objetivo de ganho seleciona a opção 'Não Zerar ao Atingir Objetivo de Ganho'.
 
 Já  a  seção  Pausar  ao  Alcançar  possibilita  que  a  automação  seja  pausada  quando  alcançados  os números de perdas consecutivas e máximo de operações configurados.
@@ -589,6 +564,7 @@ Aqui também disponibilizamos um atalho para que você possa configurar o risco 
 ## Segurança
 
 Por fim, na seção Segurança, temos algumas configurações para definir o comportamento da estratégia em caso ocorra um erro de execução no código da mesma ou eventuais mudanças do mercado, como a entrada do ativo em leilão.
+
 
 
 
@@ -611,6 +587,7 @@ Através do menu de contexto também é possível zerar a posição de uma estra
 
 
 
+
 estratégia desejada e ir em 'Editar Automação' ou clicar diretamente na engrenagem. Lembrando que caso a sua automação esteja ligada, ao realizar alguma edição ela será pausada.
 
 
@@ -619,7 +596,9 @@ Para acompanhar os detalhes do que a execução está executando, vá em Detalhe
 
 
 
+
 Na janela de Automações é possível utilizar os botões no canto superior direito da interface de controle para pausar todas as automações em execução ou para pausar e zerar todas as posições em aberto:
+
 
 
 
@@ -632,6 +611,7 @@ Neste menu você será informado quantas estratégias você possui em execução
 ## Regras de Execução
 
 As automações de estratégias funcionam com as mesmas regras que são utilizadas no backtest das estratégias  de  execução.  Para  entender  melhor  o  que  cada  função  faz  relacionada  à  execução  de ordens, recomendamos primeiramente a leitura das funções de backtest. Aqui detalhamos as regras por trás dos mecanismos de automação para facilitar o entendimento do usuário na hora de implementar uma estratégia de execução já pensando na sua automação.
+
 
 
 
@@ -654,6 +634,7 @@ Considere a imagem abaixo, que ilustra dois candles de alta, onde a linha verde 
 
 
 
+
 ## Reprocessamento do candle em aumentos de posição
 
 Caso houver execução de alguma ordem (aumento de posição), o código é reprocessado para a criação de  eventuais  ordens  de  cobertura  da  operação  (ordens  ToCover).  A  reexecução  da  estratégia  para posicionamento de ordens de cobertura acontece quando ordens forem executadas, ou seja, podem ocorrer  no  meio  de  um  candle  para  não  deixar  o  usuário  exposto  a  riscos  do  mercado.  Nesse reprocessamento,  por  mais  que  o  código  faça  a  chamada  de  ordens  que  poderiam  aumentar  a exposição, essas ordens não são enviadas.
@@ -672,11 +653,13 @@ Ordens de cobertura, ou ordens ToCover. nunca irão inverter a sua posição; el
 
 
 
+
 número de ordens de cobertura, será realizada uma edição da OCO para os novos valores de preço correspondentes. Por outro lado, caso o envio aumente ou diminua o número de ordens para aquele candle, a OCO aberta será cancelada, e será enviada uma nova OCO com as saídas definidas pelo código.
 
 ## Ordens OCO
 
 Caso o usuário configure uma ordem OCO pela configuração da automação, as ordens de cobertura definidas  pela  estratégia  serão  desconsideradas,  já  que  todas  ordens  já  vão  possuir  essa  cobertura natural da ordem OCO.
+
 
 
 
@@ -697,6 +680,7 @@ Além  das  abas,  o  usuário  também  poderá  pré-visualizar  o  seu  códi
 
 
 
+
 ## Gerenciador de Estratégias
 
 A opção de gerenciador de estratégias, permite ao usuário escolher uma determinada estratégia criada para edição, fazendo com que o Editor de estratégias carregue a estratégia determinada, ao clicar em "Editar".
@@ -709,6 +693,7 @@ O usuário também poderá excluir as estratégias desejadas, selecionando as me
 Nesta funcionalidade, permite ao usuário exportar as estratégias criadas por eles para que possam ser importadas novamente.
 
 O usuário também tem a possibilidade de querer exportar o código fonte da estratégia ou apenas o arquivo executável.
+
 
 
 
@@ -739,6 +724,7 @@ Após a criação da regra de alarme, a estratégia deverá ser ativada, atravé
 
 
 
+
 ## Criar Regra de Execução
 
 A  funcionalidade  do  Criar  Regra  de  Execução  mostra  de  forma  visual,  como  criar  uma  regra  de execução de acordo com as condições desejadas.
@@ -763,11 +749,13 @@ Ao clicar no botão "Aplicar" a estratégia criada é aplicada à lista e irá m
 
 
 
+
 ## Inserir Regra de Coloração
 
 A funcionalidade de inserir regra de coloração permite ao usuário colorir o gráfico de acordo como ele determinou os parâmetros nos gráficos dos ativos.
 
 As regras de coloração serão feitas seguindo a ideologia de um indicador ou seja, respeitando o layout atual da janela.
+
 
 
 
@@ -784,6 +772,7 @@ As condições de coloração permitem ao usuário, quais valores ele irá utili
 
 
 
+
 ## Editor de Estratégias
 
 A janela de Editor de estratégias é onde o usuário poderá criar suas próprias estratégias, juntamente com a funcionalidade de visualizar diretamente no gráfico a estratégia criada.
@@ -794,6 +783,8 @@ A janela de Editor de estratégias é onde o usuário poderá criar suas própri
 - ● Gráfico : Onde o usuário visualiza a estratégia após executada diretamente no gráfico;
 - ● Misto :  É onde o usuário visualiza as informações da aba Editor e a aba Gráfico em uma só, onde a cada vez que ele execute o código, já irá aparecer diretamente no gráfico.
 - ● Estatísticas : Ao executar uma estratégia de execução pelo editor,  o usuário poderá visualizar a estatística do relatório de performance.
+
+
 
 
 
@@ -840,6 +831,7 @@ Nas propriedades do Editor de estratégias, o usuário irá poder utilizar valor
 
 
 
+
 ## Nova Estratégia
 
 Ao clicar no botão de Nova Estratégia, o usuário poderá escolher entre as opções abaixo:
@@ -850,6 +842,7 @@ Ao clicar no botão de Nova Estratégia, o usuário poderá escolher entre as op
 - ● Execução: Será criado um exemplo, com uma função para estratégia de execução.
 - ● Screening: Será inserido um exemplo para a criação de um filtro para o Screening.
 - ● Alarme: Será criado um exemplo, com a função Alert.
+
 
 
 
@@ -877,6 +870,7 @@ BuyPrice: Retorna o preço de compra da posição.
 BuyStop(Stop : Float; Limite : Float; Quantidade : Float = ''): Realiza envio de ordem de compra stop.
 
 BuyToCoverAtMarket: Realiza o fechamento de uma operação de venda.
+
 
 
 
@@ -940,6 +934,7 @@ ConsoleLog(Content : String, Color : Integer = clBlack) Imprime uma string no te
 
 
 
+
 ## Calendário
 
 BarAnnualization: Retorna o fator de anualização, baseado no intervalo da barra.
@@ -998,7 +993,9 @@ HighM(QuantidadeMesesAnteriores : Integer): Retorna o valor de máxima de determ
 
 
 
+
 mês retroativo.
+
 
 
 
@@ -1058,6 +1055,7 @@ Today: Retorna a data atual do sistema.
 
 
 
+
 Tuesday: Retorna o número 2 referente ao dia da semana: Terça-feira.
 
 VolumeAtPrice (Interval : Integer; Offset : Integer = 1; Type : Integer = 0; Standard : Boolean = True; Auction : Boolean = True; Cross : Boolean = True)|Preço : Float|: Retorna o volume financeiro em determinado preço.
@@ -1090,6 +1088,7 @@ Year(Date : Integer): Retorna o ano de uma data específica.
 DiMaisDiMenos(Periodo : Integer): Exemplo de implementação do indicador DI+/DI-.
 
 IFR(Periodo : Integer): Exemplo de implementação do indicador IFR.
+
 
 
 
@@ -1155,6 +1154,7 @@ SetPlotColor(NumeroPlot : Integer, Cor : Integer): Altera a coloração de deter
 
 
 
+
 SetPlotStyle(NumeroPlot  :  Integer;  Estilo  :  Integer): Altera  o  estilo  da  linha  de  um  plot específico.
 
 SetPlotType(Number : Integer; Type : Integer): Altera o tipo de gráfico de determinado plot.
@@ -1204,6 +1204,7 @@ AvgAgrBuySell(AlertaVariacoes :  Integer,  TipoVolume  :  Integer,  TipoDesenho:
 AvgAgrTotal(AlertaVariacoes : Integer,  TipoVolume  :  Integer,  TipoDesenho:  Integer)|Linha  : Integer|: Retorna o valor do indicador TR - Agressão Média - Total.
 
 AvgSeparation(Periodo  :  Integer,  TipoMedia  :  Integer): Retorna  o  valor  do  indicador Afastamento Médio.
+
 
 
 
@@ -1257,6 +1258,7 @@ Euroinvest(Risco:  Integer,  ModoCalculo  :  Integer,  Periodo  :  Integer,  Des
 
 
 
+
 FastStochastic(Periodo  :  Integer,  PeriodoMedia  :  Integer,  TipoMedia  :  Integer): Retorna  o  valor  do indicador Estocástico Rápido.
 
 FinancialVol(VolumeProjetado : Boolean, Agressores : Boolean): Retorna o Valor do volume financeiro.
@@ -1306,6 +1308,7 @@ MACD(MediaLonga  :  Integer,  MediaCurta  :  Integer,  Sinal  :  Integer)|Dado :
 Media(Periodo : Integer, TipoSerie : Serie): Retorna o dado do indicador Média Móvel(Aritmética).
 
 MediaExp(Periodo : Integer, TipoSerie : Serie): Retorna o dado do indicador Média Móvel(Exponencial).
+
 
 
 
@@ -1375,6 +1378,7 @@ PTAXFuturo: Retorna o valor do indicador TR - PTAX Futuro.
 
 
 
+
 QuantityVol(VolumeProjetado : Boolean, Agressores : Boolean): Retorna o valor do indicador Volume Quantidade.
 
 Rafi: Retirna o valor do indicador Rafi.
@@ -1426,6 +1430,7 @@ TrendSniper(DiasRetroativos  :  Integer;  VWAP  :  Integer;  CorCompra  :  Integ
 TRIX(Media : Integer, TipoMedia : Integer): Retorna o valor do indicador TRIX.
 
 TRIXM(Media : Integer, TipoMedia : Integer): Retorna o valor do indicador TRIXM.
+
 
 
 
@@ -1486,6 +1491,7 @@ Retorna o ticker do ativo
 GetFeed(Asset : Ativo = ''): Retorna o código textual do Feed do ativo.
 
 IsBMF: Verifica se o ativo pertence ao segmento BMF.
+
 
 
 
@@ -1557,6 +1563,7 @@ Highest(SerieS Dados : Serie, Periodo : Integer): Retorna o maior valor da séri
 
 
 
+
 HighestBar(SerieDeDados : Serie, Periodo : Integer): Retorna o índice do maior valor da série no período.
 
 IntPortion(Valor : Float): Retorna a parte inteira de um número.
@@ -1619,6 +1626,7 @@ Sin(Valor : Float): Retorna o valor de Seno em radianos.
 
 
 
+
 Sine(Valor : Float):
 
 Retorna o valor de Seno em graus .
@@ -1671,3184 +1679,3 @@ Vega(DaysLeft : Integer, StrikePr : Float, AssetPr : Float, Rate100 : Float, Vol
 
 Select: Seleciona um ativo para mostrar no Screening.
 
-
-
-## Alarme
-
-## Função Alert
-
-## Descrição:
-
-A função Alert tem como finalidade gerar um alarme ao usuário.
-
-## Sintaxe:
-
-Alert(Cor : Integer)
-
-## Parâmetros:
-
-Cor: Determina a cor desejada para o popup de notificação, no momento de execução do alarme.
-
-Observação: Uma cor pode ser determinada a partir de uma função RBG, ou através de uma String com o nome da cor.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo a seguir, será emitido um alarme(e um popup com coloração vermelha) caso a média móvel aritmética de 9 períodos for menor que a média de 21.
-
-if(Media(9, Close) &lt; Media(21, Close)) then Alert(clRed) ;
-
-
-
-## Back-Testing
-
-## Função BuyAtMarket
-
-## Descrição:
-
-A função BuyAtMarket tem como funcionalidade realizar uma ordem de compra a mercado.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-BuyAtMarket(Quantidade : Float = '')
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos
-
-No exemplo, caso a mínima do candle atual for igual a do candle anterior, será realizada uma simulação de ordem a mercado.
-
-if (Low = Low[1]) then
-
-BuyAtMarket;
-
-
-
-## Função BuyLimit
-
-## Descrição:
-
-A função BuyLimit possui como finalidade enviar uma ordem de compra do tipo limite.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-BuyLimit(Preco : Float, Quantidade : Float = '')
-
-## Parâmetros:
-
-Preço: Preço para a inserção da ordem. Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-
-
-No  exemplo,  caso  a  média  exponencial  de  periodo1  for  maior  que  a  de  periodo2,  será criada a ordem de compra considerando o último preço.
-
-```
-medR := mediaExp(periodo1, close); medL := mediaExp(periodo2, close); if (medR[1] < medL[1]) and (medR > medL) then BuyLimit(close, lote);
-```
-
-
-## Função BuyPosition
-
-## Descrição:
-
-A função BuyPosition retorna o tamanho da posição em lote da compra.
-
-## Sintaxe:
-
-BuyPosition
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável " buyPos " irá receber o total da posição de compra.
-
-buyPos := BuyPosition;
-
-## Função BuyPositionQty
-
-## Descrição:
-
-A função BuyPositionQty retorna o tamanho da posição em quantidade da compra.
-
-## Sintaxe:
-
-
-
-buyPos := BuyPositionQty;
-
-pCompra := BuyPrice;
-
-BuyPositionQty
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, a variável " buyPos " irá receber o total da posição de compra.
-
-## Função BuyPrice
-
-## Descrição:
-
-A função BuyPrice retorna o preço de compra da posição.
-
-## Sintaxe:
-
-BuyPrice
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável " pCompra " o valor de compra da posição.
-
-
-
-## Função BuyStop
-
-## Descrição:
-
-A partir da função BuyStop, é possível criar uma ordem do tipo Stop, onde o preço stop determina o preço de gatilho, e o limite especifica até qual preço a ordem poderá ser executada.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-BuyStop(Stop : Float, Limite : Float,  Quantidade : Float = '')
-
-## Parâmetros:
-
-Stop: Valor do tipo Float que será o gatilho da ordem; Limite: Valor do tipo Float que será o limite de preço aceito para execução. Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso a mínima do candle atual for igual a do candle anterior, será inserida uma ordem de compra tipo stop, no nível especificado na variável 'pStop'.
-
-if(Low = Low[1]) then
-
-BuyStop(pStop, pStop, lote) ;
-
-## Função BuyToCoverAtMarket
-
-## Descrição:
-
-A função BuyToCoverAtMarket realiza o envio de uma ordem de compra a mercado, caso exista uma posição de venda em aberto.
-
-
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-BuyToCoverAtMarket(Quantidade : Float = '')
-
-## Parâmetros:
-
-Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo abaixo, caso a mínima atual seja menor que a mínima anterior e exista uma posição de venda, será executada uma ordem a mercado, utilizando a função BuyToCoverAtMarket para fechar a operação.
-
-if (Low &gt; Low[1] and Issold) then
-
-BuyToCoverAtMarket;
-
-## Função BuyToCoverLimit
-
-## Descrição:
-
-A função BuyToCoverLimit possui como finalidade enviar uma ordem de compra, do tipo limite, para finalizar a operação.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-
-
-## Sintaxe:
-
-BuyToCoverLimit(Preco : Float,  Quantidade : Float = '')
-
-## Parâmetros:
-
-Preco: Preço para a inserção da ordem. Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso exista uma posição de venda, será inserida a ordem no preço de fechamento para zerar a posição.
-
-if (IsSold) then
-
-BuyToCoverLimit(Close, lote) ;
-
-## Função BuyToCoverStop
-
-## Descrição:
-
-A função BuyToCoverStop tem como funcionalidade enviar uma ordem do tipo Stop de compra, caso exista uma posição de venda no determinado ativo.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-BuyToCoverStop(Stop : Float, Limite : Float,  Quantidade : Float = '')
-
-## Parâmetros:
-
-
-
-Stop:
-
-Valor que será o gatilho da ordem.
-
-Limite: Valor que será o limite do preço aceito para execução.
-
-Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso a mínima do candle atual for igual a do candle anterior e exista uma posição de venda, será inserida uma ordem de compra tipo stop, no preço armazenado na variável 'pStop'.
-
-if (Low = Low[1] and IsSold) then BuyToCoverStop(pStop, pStop);
-
-## Função CancelPendingOrders
-
-## Descrição:
-
-A função CancelPendingOrders possui como recurso efetuar o cancelamento de todas ordens enviadas até o momento de sua chamada, no fluxo atual de execução, e as ordens abertas.
-
-## Sintaxe:
-
-CancelPendingOrders
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso existam ordens pendentes, ocorrerá o cancelamento.
-
-if (HasPendingOrders) then
-
-CancelPendingOrders;
-
-
-
-## Função ClosePosition
-
-## Descrição:
-
-A função ClosePosition envia ordens para encerrar a posição. Esta função cancela todas ordens enviadas até o momento de sua chamada, no fluxo atual de execução, e as ordens abertas. Após confirmação do cancelamento das ordens, será enviada uma ordem para fechar a posição.
-
-## Sintaxe:
-
-ClosePosition
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo a seguir, se 'revTendencia' for verdadeiro, a posição será finalizada if (revTendencia = true) then
-
-ClosePosition;
-
-## Função HasPendingOrders
-
-## Descrição:
-
-A função HasPendingOrders retorna se há ordens pendentes.
-
-## Sintaxe:
-
-HasPendingOrders
-
-Parâmetros:
-
-
-
-if (HasPendingOrders) then
-
-CancelPendingOrders;
-
-## Função HasPosition
-
-if (HasPosition) then
-
-ClosePosition;
-
-Sem parâmetros.
-
-## Retorno:
-
-Boolean
-
-## Exemplos:
-
-No exemplo, caso existam ordens pendentes, ocorrerá o cancelamento.
-
-## Descrição:
-
-A função HasPosition retorna verdadeiro se a posição não é zero.
-
-## Sintaxe:
-
-HasPosition
-
-## Parâmetros:
-
-Sem parâmetros.
-
-Retorno:
-
-Boolean
-
-## Exemplos:
-
-No exemplo, caso exista posição, ocorrerá o fechamento.
-
-
-
-## Função IsBought
-
-## Descrição:
-
-A função IsBought tem como funcionalidade determinar se há uma posição de compra em aberto.
-
-## Sintaxe:
-
-IsBought
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Boolean:
-
-False - Não há posição em aberto.
-
-True - Há posição em aberto.
-
-## Exemplos:
-
-No exemplo, caso exista uma posição de compra, haverá a aplicação de uma coloração (verde).
-
-if (IsBought) then
-
-PaintBar(clGreen) ;
-
-## Função IsSold
-
-## Descrição:
-
-A função IsSold tem como funcionalidade determinar se há uma posição de venda em aberto.
-
-## Sintaxe:
-
-IsSold
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-
-
-Boolean:
-
-False -
-
-Não há posição em aberto.
-
-True - Há posição em aberto.
-
-if (IsSold) then
-
-PaintBar(clRed) ;
-
-## Função MyPrice
-
-mPrice := MyPrice;
-
-## Função Position
-
-False -
-
-Não há posição em aberto.
-
-True - Há posição em aberto.
-
-## Exemplos:
-
-No exemplo, caso exista uma posição de venda, haverá a aplicação de uma coloração (vermelha).
-
-## Descrição:
-
-A função MyPrice retorna a média entre a máxima, mínima e fechamento.
-
-## Sintaxe:
-
-MyPrice
-
-## Parâmetros:
-
-Sem parâmetros.
-
-Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável " mPrice ", o valor da função MyPrice .
-
-Descrição:
-
-
-
-## vPosition:= Position;
-
-## Função PositionQty
-
-A função Position retorna o tamanho da posição em lote, positivo para compra e negativo para venda.
-
-## Sintaxe:
-
-Position
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "vPosition", a posição.
-
-## Descrição:
-
-A função PositionQty retorna o tamanho da posição em quantidade, positivo para compra e negativo para venda.
-
-## Sintaxe:
-
-PositionQty
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "vPosition", a posição.
-
-
-
-## vPosition:= PositionQty;
-
-## Função Price
-
-## Descrição:
-
-A função Price retorna o preço de compra ou venda da posição, dependendo se estiver comprado ou vendido.
-
-## Sintaxe:
-
-Price
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "vPrice", o preço da posição.
-
-## vPrice := Price;
-
-## Função ReversePosition
-
-## Descrição:
-
-A função ReversePosition tem como funcionalidade realizar o envio de ordens, a fim de inversão da posição. Esta função cancela todas ordens enviadas até o momento de sua chamada, no fluxo atual de execução, e as ordens abertas. Após confirmação do cancelamento das ordens, será enviada uma ordem para reverter a posição.
-
-## Sintaxe:
-
-
-
-## ReversePosition
-
-
-if (Low &lt; Low[1]) and (IsBought = True) then
-
-ReversePosition;
-
-## Função SellPosition
-
-sellPos := SellPosition;
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos
-
-No exemplo, caso a mínima do candle atual for menor a do candle anterior, e exista uma posição de compra, será realizada a reversão.
-
-## Descrição:
-
-A função SellPosition retorna o tamanho da posição em lote de venda.
-
-## Sintaxe:
-
-SellPosition
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável " sellPos " irá receber o total da posição de venda
-
-
-
-## Função SellPositionQty
-
-## Descrição:
-
-A função SellPositionQty retorna o tamanho da posição em quantidade de venda.
-
-## Sintaxe:
-
-SellPositionQty
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, a variável " sellPos " irá receber o total da posição de venda
-
-## sellPos := SellPositionQty;
-
-## Função SellPrice
-
-## Descrição:
-
-A função SellPrice retorna o preço de venda da posição.
-
-## Sintaxe:
-
-SellPrice
-
-## Parâmetros:
-
-Sem parâmetros.
-
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável " pVenda " o valor de venda da posição.
-
-pVenda := SellPrice;
-
-## Função SellShortAtMarket
-
-## Descrição:
-
-A função S ellShortAtMarket tem como funcionalidade o envio de uma ordem a mercado de venda.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-SellShortAtMarket(Quantidade : Float = '')
-
-## Parâmetros:
-
-Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo abaixo, será executada uma ordem de venda a mercado, caso 'newOpVenda' for verdadeiro.
-
-
-
-
-
-sellshortatmarket ;
-
-## Função SellShortLimit
-
-## Descrição:
-
-A função SellShortLimit possui como finalidade enviar uma ordem de venda do tipo limite.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-SellShortLimit(Preco : Float,  Quantidade : Float = '')
-
-## Parâmetros:
-
-Preco: Preço para a inserção da ordem. Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso a média exponencial de 9 períodos for menor que a de 21, será criada a ordem de venda considerando o preço armazenado na variável 'vPreco'.
-
-if (MediaExp(9, Close) &lt; MediaExp(21, Close)) then SellShortLimit(vPreco, lote) ;
-
-
-
-## Função SellShortStop
-
-## Descrição:
-
-A função SellShortStop tem como finalidade enviar uma ordem de venda do tipo stop.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-SellShortStop(Stop : Float, Limite : Float = Market,  Quantidade : Float = '')
-
-## Parâmetros:
-
-Stop: Valor do tipo Float que será o gatilho da ordem; Limite: Valor do tipo Float que será o limite de preço aceito para execução. Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso a máxima atual for maior do que a anterior, será inserida uma ordem de venda stop, no preço armazenado na variável 'pAux'.
-
-if (High &gt; High[1]) then
-
-SellShortStop(pAux, pAux);
-
-## Função SellToCoverAtMarket
-
-## Descrição:
-
-A função SellToCoverAtMarket tem como funcionalidade realizar o envio de uma ordem de venda a mercado, caso exista uma posição de compra.
-
-
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-## SellToCoverAtMarket
-
-## Parâmetros:
-
-Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo abaixo, caso a máxima atual seja maior que a máxima anterior e exista uma posição de compra, será executada uma ordem a mercado,para fechar a operação.
-
-if (High &gt; High[1]) and (Isbought) then
-
-SellToCoverAtMarket ;
-
-## Função SellToCoverLimit
-
-## Descrição:
-
-A função SellToCoverLimit possui como finalidade enviar uma ordem de venda, do tipo limite, para finalizar a operação.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-
-
-SellToCoverLimit(Preco : Float,  Quantidade : Float = '')
-
-## Parâmetros:
-
-Preco: Preço para a inserção da ordem. Quantidade: Quantidade da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso exista uma posição de compra, será inserida a ordem no preço de fechamento para zerar a posição.
-
-## if (IsBought) then
-
-SellToCoverLimit(Close) ;
-
-## Função SellToCoverStop
-
-## Descrição:
-
-A função SellToCoverStop tem como funcionalidade enviar uma ordem do tipo stop de venda, caso exista uma posição de compra no ativo.
-
-Importante: Caso  o  parâmetro  de  quantidade  não  seja  especificado,  a  ordem  será  inserida considerando o campo Quantidade na aba de Execução do editor de estratégias, respeitando que o mínimo seja 1 lote. Na automação, a quantidade considerada é a configurada no campo "Quantidade por Ordem".
-
-Quando o parâmetro é especificado, a estratégia ignora os campos de configuração de quantidade e irá utilizar a quantidade especificada pelo código. Essa quantidade deve ser múltipla do lote do ativo.
-
-## Sintaxe:
-
-SellToCoverStop(Stop : Float, Limite : Float,  Quantidade : Float = '')
-
-## Parâmetros:
-
-Stop: Valor que será o gatilho da ordem. Limite: Valor que será o limite do preço aceito para execução. Quantidade: Quantidade da ordem.
-
-
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, caso a máxima do candle atual for maior que a do candle anterior e exista uma posição de compra, será inserida uma ordem de venda do tipo stop, no preço de 'pAux'.
-
-if (High &gt; High[1] and Isbough) then
-
-SellToCoverStop(pAux, pAux, lote);
-
-## Função SendOrder
-
-## Descrição:
-
-A partir da função SendOrder, pode-se enviar ordens customizadas, determinando o lado, tipo e quantidade.
-
-## Sintaxe:
-
-SendOrder(Lado : Integer, Tipo : Integer, Quantidade : Float , Limite : Float, Stop : Float)
-
-## Parâmetros:
-
-Lado: Determina o lado da ordem: osBuy - Compra osSell - Venda Tipo: Tipo da ordem: otMarket - A mercado otLimit - Limite otStopLimit - Stop Quantidade: Quantidade de contratos. Limite: Limite do preço aceito para execução. Stop: Valor que será o gatilho da ordem.
-
-## Retorno:
-
-Void: Sem retorno.
-
-## Exemplos:
-
-No exemplo, será efetuada a inserção de uma ordem de compra, tipo Stop, no preço 17.44, com limite de execução até o nível 17.50.
-
-SendOrder(osBuy, otStopLimit, 5, 17.50, 17.44);
-
-
-
-## Função DailyResult
-
-## Descrição:
-
-A partir da função DailyResult, pode-se verificar o resultado diário das operações.
-
-Observação: O parâmetro OpenResult é opcional, o valor default é verdadeiro.
-
-## Sintaxe:
-
-DailyResult(OpenResult : Boolean = True)
-
-## Parâmetros:
-
-OpenResult :
-
-Se deve retornar o resultado aberto:
-
-Verdadeiro : Retorna o resultado fechado + aberto.
-
-Falso : Retorna apenas o resultado fechado.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será o retornado resultado fechado + aberto das operações do dia.
-
-## dResult := DailyResult(True); // Retorna o resultado fechado + aberto
-
-## Função OpenResult
-
-## Descrição:
-
-A partir da função OpenResult, pode-se verificar o resultado diário das operações em aberto.
-
-## Sintaxe:
-
-OpenResult
-
-## Parâmetros:
-
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será o retornado resultado aberto das operações do dia.
-
-```
-dResult := OpenResult; // Retorna o resultado aberto
-```
-
-
-## Descrição:
-
-A função XRay adiciona uma variável para ser exibida no painel de Raio-X da automação, na página de detalhes.
-
-## Sintaxe:
-
-XRay(strName : String, bValue : Boolean, strGroup : String, dValue : Float, ColorOn : Color, ColorOff : Color) :
-
-## Parâmetros:
-
-Determina o grupo da variável, Caso deixado como String vazia (''), será colocado no grupo strName: Determina o nome da variável a ser exibida bValue: Determina se a variável será verdadeira ou não strGroup: Geral
-
-dValue: Determina um valor opcional a ser associado a variável.
-
-ColorOn: Determina a cor que o campo da variável vai ficar quando o bValue for verdadeiro. Tem valor padrao azul
-
-ColorOff: Determina a cor que o campo da variável vai ficar quando o bValue for falso. Tem valor padrão cinza
-
-## Retorno:
-
-Void: Sem retorno.
-
-```
-XRay ( "BuyConditionl" bByCorditiorl Close[2] Close[l] "Buy" Close[l] Close[o] "Buy" cifellow) XRav ("SellConditionl" "Sell" Close[o] Close[l] XRay ("SellCondition2" bSellCorditiorz "Sell" Close[l] Close[2] XRar ("SellCondition3" bSellconditior3 "Sell" Exemplos: O trecho de código a seguir irá cria 6 variáveis de Raio-X, divididas nos grupos de Buy e Sell:
-```
-
-Produzindo o seguinte resultado:
-
-
-
-
-
-Nesse caso, tanto as BuyCondition2 e SellCondition2 eram verdadeiras, deixando os respectivos grupos com 1 variável verdadeira em cada.
-
-## Depuração
-
-## Função ConsoleLog
-
-## Descrição:
-
-A função ConsoleLog Imprime uma string no terminal de console para ajudar na depuração do código.
-
-## Sintaxe:
-
-ConsoleLog(Content : String, Color : Integer = clBlack)
-
-## Parâmetros:
-
-Content: String que irá ser impressa no console de depuração. Color: Cor da string impressa.
-
-## Retorno:
-
-Void. Sem retorno.
-
-## Exemplos:
-
-No exemplo, será impresso os dias e as variações do WDOFUT em que teve variação de mais de 4%.
-
-
-
-
-
-## Calendário
-
-## Função BarAnnualization
-
-## Descrição:
-
-A função BarAnnualization retorna o fator de anualização(raiz quadrada) baseado no intervalo da barra(diário = 365, semanal = 52, mensal = 12).
-
-## Sintaxe:
-
-BarAnnualization
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, a variável "nBA" irá receber o dado de retorno da função BarAnnualization .
-
-## nBA := BarAnnualization;
-
-
-
-## Função BarDuration
-
-temp := BarDuration;
-
-## Descrição:
-
-A função BarDuration retorna, em minutos, a duração da barra atual.
-
-## Sintaxe:
-
-BarDuration
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, a variável "temp" irá receber o dado da função BarDuration .
-
-## Função BarDurationF
-
-## Descrição:
-
-A função BarDurationF retorna, em minutos, a duração da barra atual.
-
-## Sintaxe:
-
-BarDurationF
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-
-
-## Exemplos:
-
-No exemplo, a variável "temp" irá receber o dado da função BarDurationF .
-
-temp := BarDurationF;
-
-## Função Bartype
-
-## Descrição:
-
-A função Bartype retorna um código numérico referente ao período utilizado.
-
-## Sintaxe:
-
-Bartype
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-## Inteiro:
-
--1 - Outros
-
-1 - Intraday
-
-2 - Diário
-
-3 - Semanal
-
-4 - Mensal
-
-## Exemplos:
-
-No exemplo, a variável "n" irá receber um inteiro referente ao tempo determinado.
-
-## n := Bartype;
-
-## Função CalcDate
-
-## Descrição:
-
-A função CalcDate retorna um valor o qual representa uma data deslocada, obtida ao adicionar ou subtrair dias de uma data de referência.
-
-
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-CalcDate(DataReferencia : Integer, DiasDeslocamento : Integer)
-
-## Parâmetros:
-
-DataReferencia: Determina a data que será utilizada como base para o deslocamento. DiasDelocamento: Determina quantos dias serão adicionados ou subtraídos da data de referência.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo abaixo, será visualizada, graficamente, a data resultante ao subtrair 14 dias da data de 26/10/2018.
-
-## Plot(CalcDate(1181026, -14)) ;
-
-## Funcao CalcTime
-
-## Descrição:
-
-A função CalcTime retorna um valor o qual representa uma hora deslocada, obtida ao adicionar ou subtrair minutos de uma hora de referência.
-
-Observação: Horas  são  representadas  pelo  tipo  de  dado  "Integer",  no  formato(24  horas): HorasMinutos.
-
-## Sintaxe:
-
-CalcTime(HoraReferencia : Integer, MinutosDeslocamento : Integer)
-
-## Parâmetros:
-
-HoraReferencia: Determina a hora que será utilizada como base para o deslocamento; MinutosDeslocamento: Determina quantos minutos serão adicionados ou subtraídos da hora de referência.
-
-## Retorno:
-
-
-## Integer
-
-## Exemplos:
-
-No exemplo abaixo, será visualizada, graficamente, a hora resultante ao deslocar 65 minutos a partir das 14h(Resultado: 1505).
-
-Plot(CalcTime(1400, 65)) ;
-
-## Função CloseD
-
-## Descrição:
-
-A função CloseD tem como finalidade retornar o valor de fechamento de um número determinado de dias atrás. Atualmente a função não é compatível com ativo diferente do selecionado no backtest, como ativos coletados usando a função asset por exemplo.
-
-## Sintaxe:
-
-CloseD(QuantidadeDiasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeDiasAnteriores:
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "nFechamento" o valor de fechamento de dois dias anteriores ao dia atual.
-
-## nFechamento := CloseD(2);
-
-## Função CloseM
-
-## Descrição:
-
-Determina a quantidade desejada de dias anteriores.
-
-
-
-
-A função CloseM tem como finalidade retornar o valor de fechamento de um número determinado de meses atrás.
-
-## mFechamento := CloseM(3);
-
-## Função CloseW
-
-## Sintaxe:
-
-CloseM(QuantidadeMesesAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeMesesAnteriores: Determina a quantidade desejada de meses anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "mFechamento" o valor de fechamento de três meses anteriores ao mês atual.
-
-## Descrição:
-
-A função CloseW tem como finalidade retornar o valor de fechamento de um número determinado de semanas atrás.
-
-## Sintaxe:
-
-CloseW(QuantidadeSemanasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeSemanasAnteriores: Determina a quantidade desejada de semanas anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-
-
-No exemplo a seguir, será atribuído à variável "wFechamento" o valor de fechamento de duas semanas anteriores à semana atual.
-
-## wFechamento := CloseW(2);
-
-## Função CloseY
-
-## Descrição:
-
-A função CloseY tem como finalidade retornar o valor de fechamento de um número determinado de anos atrás.
-
-## Sintaxe:
-
-CloseY(QuantidadeAnosAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeAnosAnteriores:
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "yFechamento" o valor de fechamento do ano anterior.
-
-## yFechamento := CloseY(1);
-
-## Função CurrentAssetDate
-
-## Descrição:
-
-A função CurrentAssetDate retorna a data atual do ativo no gráfico.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-Determina a quantidade desejada de anos anteriores.
-
-
-
-## nData := CurrentAssetDate;
-
-## nData := CurrentDate;
-
-## CurrentAssetDate
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nData" a data do ativo.
-
-## Função CurrentDate
-
-## Descrição:
-
-A função CurrentDate possui como finalidade retornar a data atual do sistema.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-CurrentDate
-
-## Parâmetros:
-
-Sem parâmetros.
-
-Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nData" a data do dia atual.
-
-
-
-## Função CurrentTime
-
-## nHora := CurrentTime;
-
-## Descrição:
-
-A função CurrentTime possui como finalidade retornar a hora atual do sistema.
-
-Observação: Horas são representadas pelo tipo de dado "Integer", no formato: HHMM.
-
-## Sintaxe:
-
-CurrentTime
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nHora" a hora atual.
-
-## Função Date
-
-## Descrição:
-
-A função Date possui como finalidade retornar a data do candle que está sendo analisado.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-Date
-
-
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nData" a data do candle atual.
-
-## nData := Date;
-
-## Função DayOfMonth
-
-## Descrição:
-
-A função DayOfMonth retorna o dia do mês de uma data específica.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-DayOfMonth(Data : Integer)
-
-## Parâmetros:
-
-Data: Data para obter o dia.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "dAtual" irá receber o dia atual.
-
-## dAtual := DayOfMonth(CurrentDate);
-
-
-
-## Função DayOfWeek
-
-## Descrição:
-
-A função DayOfWeek retorna o dia da semana de uma data específica.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-DayOfWeek(Data : Integer)
-
-## Parâmetros:
-
-Data: Data para obter o dia da semana.
-
-## Retorno:
-
-## Integer:
-
-Referência de dias da semana:
-
-- 0 - Domingo
-- 1 - Segunda
-- 2 - Terça
-- 3 - Quarta
-- 4 - Quinta
-- 5 - Sexta
-- 6 - Sábado
-
-## Exemplos:
-
-No exemplo, a variável "dAtual" irá receber o dia da semana atual.
-
-## dAtual := DayOfWeek(CurrentDate);
-
-## Função DaysToExpiration
-
-## Descrição:
-
-A  função DaysToExpiration é  uma  função  a  quantidade  de  dias  úteis  restantes  até  a  terceira sexta-feira de um determinado mês e ano.
-
-## Sintaxe:
-
-
-
-DaysToExpiration(Mes : Integer, Ano : Integer)
-
-## Parâmetros:
-
-Mes: Determina o mês que se deseja a informação:
-
-- 1 - Janeiro
-- 2 - Fevereiro
-- 3 - Março
-- 4 - Abril
-- 5 - Maio
-- 6 - Junho
-- 7 - Julho
-- 8 - Agosto
-- 9 - Setembro
-- 10 - Outubro
-- 11 - Novembro
-- 12 - Dezembro
-
-Ano: Determina o ano desejado para análise, onde deverá estar no formato: 1AnoDesejado.
-
-## Retorno:
-
-## Integer
-
-## Exemplos:
-
-No  exemplo  abaixo,  a  variável  "nQtdDias"  irá  receber  a  quantidade  de  dias  úteis  até  a  terceira sexta-feira de dezembro/2016.
-
-## nQtdDias := DaysToExpiration(12, 116);
-
-## Função ELDate
-
-## Descrição:
-
-A função ELDate possui como finalidade retorna uma data em EasyLanguage format(YYYMMDD).
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-ELDate(Ano : Integer, Mes : Integer, Dia : Integer)
-
-
-
-## Parâmetros:
-
-Ano:
-
-Ano no formato YYYY.
-
-Mes:
-
-Mes no formato MM.
-
-Dia:
-
-Dia no formato DD.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nData" a data de 13/11/2018 no formato: 1181113.
-
-## nData := ELDate(2018, 11, 13);
-
-## Função ELDate\_Consol
-
-## Descrição:
-
-A função ELDate\_Consol possui como finalidade converter uma data YYYYMMDD em EasyLanguage format(YYYMMDD).
-
-## Sintaxe:
-
-ELDate\_Consol(Data : Integer)
-
-## Parâmetros:
-
-Data:
-
-Data no formato YYYYMMDD.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nData" a data de 2018/11/13 no formato: 1181113.
-
-## nData := ELDate\_Consol(20181113);
-
-
-
-## Função FindBar
-
-## Descrição:
-
-A  função FindBar retorna  o  índice  de  uma  barra  através  de  uma  data  e  hora,  onde  a contagem é iniciada a partir do candle atual(índice 0).
-
-Observações:
-
-Representação  de  datas: 1AnoMêsDia.
-
-Datas  são  representadas  pelo  tipo  de  dado  "Integer",  no  formato:
-
-Representação de horas: Horas são representadas pelo tipo de dado "Integer", no formato: HHMM.
-
-## Sintaxe:
-
-FindBar(Data : Integer, Hora : Integer)
-
-## Parâmetros:
-
-Data:
-
-Data do candle.
-
-Hora:
-
-Hora do candle específico.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "n" irá receber o índice do candle relacionado com o horário 11h10 do dia atual.
-
-## n := FindBar(CurrentDate, 1110);
-
-## Função Friday
-
-## Descrição:
-
-A função Friday retorna o número 5, representando o dia da semana: sexta-feira.
-
-## Sintaxe:
-
-Friday
-
-## Parâmetros:
-
-
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nDia" irá receber número 5, referente ao dia específico da semana.
-
-## nDia := Friday;
-
-## Função HighestVolume
-
-## Descrição:
-
-A função HighestVolume Retorna o maior volume de acordo com o tipo.
-
-- * Disponível apenas para clientes Profit Ultra. Os dados do Volume Profile não fornecem um histórico de dados extenso, fazendo com que o backtest de estratégias utilizando essa função seja limitado.
-
-## Sintaxe:
-
-HighestVolume (Interval : Integer; Offset : Integer = 1; Type : Integer = 0; Standard : Boolean = True; Auction : Boolean = True; Cross : Boolean = True)|Rank : Integer|:
-
-## Parâmetros:
-
-Interval: Intervalo de tempo utilizado para o cálculo do volume. Pode ser:
-
-- · itDaily: Utiliza o intervalo diário. (No período Diário é apenas permitido Offset 1)
-- · itMinute: Utiliza o intervalo em minutos.
-
-Offset: Determina a quantidade de períodos (dias ou minutos, dependendo do Interval) a partir do qual o cálculo será feito. Aceita valores entre 0 e 720. Um valor de 0 indica o período atual, enquanto valores maiores indicam períodos passados.
-
-Type: Define o tipo de volume a ser considerado no cálculo. Pode ser:
-
-- · vtFinancial: Volume financeiro.
-- · vtQuantity: Volume em quantidade de ações ou contratos.
-- · vtTrade: Número de negócios realizados.
-
-Standard: Variável booleana que permite puxar os trades padrão. Valor padrão é True.
-
-Auction: Variável booleana que define se o volume de leilões será incluído no cálculo. Valor padrão é True.
-
-Cross: Variável booleana que indica se o volume de operações cruzadas (cross trades) será considerado. Valor padrão é True.
-
-Rank: Deve ser definido ao final da função entre barras verticais: |RANK|. O primeiro (0) será o maior volume da lista.
-
-## Retorno:
-
-
-Float
-
-## Exemplo:
-
-// No exemplo a seguir, ser á retornado o maior volume financeiro dos ú ltimos 60 minutos. HighestVolume(itMinute, 60, vtFinancial)|0|
-
-## Função HighestVolumePrice
-
-## Descrição:
-
-A função HighestVolumePrice Retorna o preço do maior volume de acordo com o tipo.
-
-- *Disponível apenas para clientes Profit Ultra. Os dados do Volume Profile não fornecem um histórico de dados extenso, fazendo com que o backtest de estratégias utilizando essa função seja limitado.
-
-## Sintaxe:
-
-HighestVolumePrice (Interval : Integer; Offset : Integer = 1; Type : Integer = 0; Standard : Boolean = True; Auction : Boolean = True; Cross : Boolean = True)|Rank : Integer|:
-
-## Parâmetros:
-
-Interval: Intervalo de tempo utilizado para o cálculo do volume. Pode ser:
-
-- · itDaily: Utiliza o intervalo diário. (No período Diário é apenas permitido Offset 1)
-- · itMinute: Utiliza o intervalo em minutos.
-
-Offset: Determina a quantidade de períodos (dias ou minutos, dependendo do Interval) a partir do qual o cálculo será feito. Aceita valores entre 0 e 720. Um valor de 0 indica o período atual, enquanto valores maiores indicam períodos passados.
-
-Type: Define o tipo de volume a ser considerado no cálculo. Pode ser:
-
-- · vtFinanceiro: Volume financeiro.
-- · vtQuantidade: Volume em quantidade de ações ou contratos.
-- · vtTrade: Número de negócios realizados.
-
-Standard: Variável booleana que permite puxar os trades padrão. Valor padrão é True.
-
-Auction: Variável booleana que define se o volume de leilões será incluído no cálculo. Valor padrão é True.
-
-Cross: Variável booleana que indica se o volume de operações cruzadas (cross trades) será considerado. Valor padrão é True.
-
-Rank: Deve ser definido ao final da função entre barras verticais: |RANK|. O primeiro (0) será o maior volume da lista.
-
-
-
-## Retorno:
-
-Float
-
-## Exemplo:
-
-// No exemplo a seguir, ser á retornado o pre ç o do maior volume em quantidade nos ú ltimos 5 minutos
-
-HighestVolumePrice(itMinute, 5, vtQuantity)|0|
-
-## Função HighD
-
-## Descrição:
-
-A função HighD tem como finalidade retornar o valor de máxima de um número determinado de dias atrás. Atualmente a função não é compatível com ativo diferente do selecionado no backtest, como ativos coletados usando a função asset por exemplo.
-
-## Sintaxe:
-
-HighD(QuantidadeDiasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeDiasAnteriores:
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "dMaxima" o valor de máxima de dois dias anteriores ao dia atual.
-
-dMaxima := HighD(2);
-
-Determina a quantidade desejada de dias anteriores.
-
-
-
-
-## Função HighM
-
-## Descrição:
-
-A função HighM tem como finalidade retornar o valor de máxima de um número determinado de meses atrás.
-
-## Sintaxe:
-
-HighM(QuantidadeMesesAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeMesesAnteriores: Determina a quantidade desejada de meses anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "mMaxima" o valor de máxima de cinco meses anteriores ao mês atual.
-
-## mMaxima := HighM(5);
-
-## Função HighW
-
-## Descrição:
-
-A função HighW tem como finalidade retornar o valor de máxima de um número determinado de semanas atrás.
-
-## Sintaxe:
-
-HighW(QuantidadeSemanasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeSemanasAnteriores: Determina a quantidade desejada de semanas anteriores.
-
-## Retorno:
-
-
-## Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "wMaxima" o valor de máxima de sete semanas anteriores à semana atual.
-
-wMaxima := HighW(7);
-
-## Função HighY
-
-## Descrição:
-
-A função HighY tem como finalidade retornar o valor de máxima de um número determinado de anos atrás.
-
-## Sintaxe:
-
-HighY(QuantidadeAnosAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeAnosAnteriores: Determina a quantidade desejada de anos anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "yMaxima" o valor de máxima de dois anos anteriores ao atual.
-
-yMaxima := HighY(2);
-
-## Função LastCalcDate
-
-## Descrição:
-
-
-
-
-## Plot(LastCalcDate) ;
-
-## Função LastCalcTime
-
-A função LastCalcDate retorna a data do último candle completo formado dentro do gráfico.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-LastCalcDate
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo abaixo, será colocado diretamente no gráfico a data dos candles de acordo com o andamento do mercado.
-
-## Descrição:
-
-A função LastCalcTime retorna a hora do último candle completo formado dentro do gráfico, no formato 24h(HHMM).
-
-## Sintaxe:
-
-LastCalcTime
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-
-
-## Exemplos:
-
-No exemplo abaixo, será colocado diretamente no gráfico a hora de fechamento dos candles, de acordo com o andamento do mercado.
-
-## Plot(LastCalcTime) ;
-
-## Função LastDayOfMonth
-
-## Descrição:
-
-A função LastDayOfMoth retorna o último dia do mês de referência.
-
-## Sintaxe:
-
-LastDayOfMonth(MesReferencia : Integer)
-
-## Parâmetros:
-
-MesReferencia: Determina o mês de referência, de Janeiro(1) a Dezembro(12).
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo abaixo, será atribuído à variável "nDia" o último dia(30) do mês de Setembro.
-
-## nDia := LastDayOfMonth(9);
-
-## Função LowD
-
-## Descrição:
-
-A função LowD tem como finalidade retornar o valor de mínima de um número determinado de dias atrás.
-
-
-
-## dMinima := LowD(3);
-
-## Função LowM
-
-## Sintaxe:
-
-LowD(QuantidadeDiasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeDiasAnteriores:
-
-Determina a quantidade desejada de dias anteriores
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "dMinima" o valor de mínima de três dias anteriores ao dia atual.
-
-## Descrição:
-
-A função LowM tem como finalidade retornar o valor de mínima de um número determinado de meses atrás.
-
-## Sintaxe:
-
-LowM(QuantidadeMesesAnteriores
-
-: Integer)
-
-## Parâmetros:
-
-QuantidadeMesesAnteriores: Determina a quantidade desejada de meses anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "mMinima" o valor de mínima do mês anterior.
-
-
-
-## mMinima := LowM(1);
-
-## Função LowW
-
-## Descrição:
-
-A função LowW tem como finalidade retornar o valor de mínima de um número determinado de semanas atrás.
-
-## Sintaxe:
-
-LowW(QuantidadeSemanasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeSemanasAnteriores: Determina a quantidade desejada de semanas anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "wMinima" o valor de mínima de sete semanas anteriores à semana atual.
-
-## wMinima := LowM(7);
-
-## Função LowY
-
-## Descrição:
-
-A função LowY tem como finalidade retornar o valor de mínima de um número determinado de anos atrás.
-
-## Sintaxe:
-
-LowY(QuantidadeAnosAnteriores : Integer)
-
-
-
-## yMinima := LowY(2);
-
-## Função Monday
-
-nDia := Monday;
-
-## Parâmetros:
-
-QuantidadeAnosAnteriores:
-
-Determina a quantidade desejada de anos anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "yMinima" o valor de mínima de dois anos anteriores ao atual.
-
-## Descrição:
-
-A função Monday retorna o número 1, representando o dia da semana: segunda-feira.
-
-## Sintaxe:
-
-Monday
-
-## Parâmetros:
-
-Sem parâmetros.
-
-Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nDia" irá receber número 1, referente ao dia específico da semana.
-
-
-
-## Função Month
-
-## Descrição:
-
-A função Month retorna o mês de uma data específica.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-Month(Data : Integer)
-
-## Parâmetros:
-
-Data: Data para obter o mês.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "mAtual" irá receber o mês atual.
-
-## mAtual := Month(CurrentDate);
-
-## Função Next3rdFriday
-
-## Descrição:
-
-A função Next3rdFriday retorna a quantidade de dias úteis restantes até a terceira sexta-feira de determinado mês subsequente.
-
-## Sintaxe:
-
-Next3rdFriday(Mes : Integer)
-
-## Parâmetros:
-
-Mes: Determina o mês que se deseja a informação, onde a contagem inicia-se a partir do mês atual(0).
-
-## Retorno:
-
-
-## Integer
-
-## Exemplos:
-
-No exemplo abaixo, a variável "nSexta" irá receber a quantidade de dias úteis até a terceira sexta-feira do mês seguinte.
-
-## nSexta := Next3rdFriday(1);
-
-## Função OpenD
-
-## Descrição:
-
-A função OpenD tem como finalidade retornar o valor de abertura de um número determinado de dias atrás.
-
-## Sintaxe:
-
-OpenD(QuantidadeDiasAnteriores
-
-: Integer)
-
-## Parâmetros:
-
-QuantidadeDiasAnteriores:
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "dAbertura" o valor de abertura de seis dias anteriores ao dia atual.
-
-## dAbertura := OpenD(6);
-
-## Função OpenM
-
-## Descrição:
-
-Determina a quantidade desejada de dias anteriores.
-
-
-
-
-## mAbertura := OpenM(1);
-
-## Função OpenW
-
-A função OpenM tem como finalidade retornar o valor de abertura de um número determinado de meses atrás.
-
-## Sintaxe:
-
-OpenM(QuantidadeMesesAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeMesesAnteriores: Determina a quantidade desejada de meses anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "mAbertura" o valor de abertura do mês anterior ao atual.
-
-## Descrição:
-
-A função OpenW tem como finalidade retornar o valor de abertura de um número determinado de semanas atrás.
-
-## Sintaxe:
-
-OpenW(QuantidadeSemanasAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeSemanasAnteriores: Determina a quantidade desejada de semanas anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-
-
-No exemplo a seguir, será atribuído à variável "wAbertura" o valor de abertura de cinco semanas anteriores à semana atual.
-
-## wAbertura := OpenW(5);
-
-## Função OpenY
-
-## Descrição:
-
-A função OpenY tem como finalidade retornar o valor de abertura de um número determinado de anos atrás.
-
-## Sintaxe:
-
-OpenY(QuantidadeAnosAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeAnosAnteriores:
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "yAbertura" o valor de abertura do ano anterior ao atual.
-
-## yAbertura := OpenY(1);
-
-## Função RS\_BarsPerDay
-
-## Descrição:
-
-A  função RS\_BarsPerDay retorna  o  número  estimado  de  barras  de  determinada  periodicidade(em minutos).  Caso  o  periodo  seja  diário,  será  obtido  1  como  retorno,  e,  para  períodos  em  minutos, ocorrerá a divisão do número total de minutos em um dia(1440) pela periodicidade selecionada.
-
-## Sintaxe:
-
-Determina a quantidade desejada de anos anteriores.
-
-
-
-n := RS\_BarsPerDay;
-
-## Função Saturday
-
-## nDia := Saturday;
-
-## RS\_BarsPerDay
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Inteiro
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "n" o retorno da chamada de função.
-
-## Descrição:
-
-A função Saturday retorna o número 6, representando o dia da semana: sábado.
-
-## Sintaxe:
-
-Saturday
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nDia" irá receber número 6, referente ao dia específico da semana.
-
-
-
-## Função Sunday
-
-nDia := Sunday;
-
-## Descrição:
-
-A função Sunday retorna o número 0, representando o dia da semana: domingo.
-
-## Sintaxe:
-
-Sunday
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nDia" irá receber número 0, referente ao dia específico da semana.
-
-## Função Thursday
-
-## Descrição:
-
-A função Thursday retorna o número 4, representando o dia da semana: quinta-feira.
-
-## Sintaxe:
-
-Thursday
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-
-
-## Exemplos:
-
-nDia := Thursday;
-
-## Função Time
-
-nHora := Time;
-
-## Função TimeToMinutes
-
-No exemplo, a variável "nDia" irá receber número 4, referente ao dia específico da semana.
-
-## Descrição:
-
-A função Time possui como finalidade retornar a hora de abertura do candle analisado.
-
-Observação: Horas são representadas pelo tipo de dado "Integer", no formato: HHMM.
-
-## Sintaxe:
-
-Time
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nHora", a hora de abertura do candle.
-
-## Descrição:
-
-A função TimeToMinutes possui como finalidade efetuar a conversão de um horário em minutos.
-
-
-
-## Sintaxe:
-
-TimeToMinutes(Hora : Integer)
-
-## Parâmetros:
-
-Hora:
-
-Hora para a conversão.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "minutos" irá receber a conversão em minutos(750) da hora: 12h30.
-
-## minutos := TimeToMinutes(1230);
-
-## Função Today
-
-## Descrição:
-
-A função Today possui como finalidade retornar a data atual do sistema.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-Today
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "nData" a data do dia atual.
-
-
-
-## nData := Today;
-
-## Função Tuesday
-
-## Descrição:
-
-A função Tuesday retorna o número 2, representando o dia da semana: terça-feira.
-
-## Sintaxe:
-
-Tuesday
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nDia" irá receber número 2, referente ao dia específico da semana.
-
-nDia := Tuesday;
-
-## Função VolumeAtPrice
-
-## Descrição:
-
-A função VolumeAtPrice Retorna o volume no preço selecionado para o intervalo.
-
-* Disponível apenas para clientes Profit Ultra. Os dados do Volume Profile não fornecem um histórico de dados extenso, fazendo com que o backtest de estratégias utilizando essa função seja limitado.
-
-## Sintaxe:
-
-VolumeAtPrice(Interval : Integer; Offset : Integer = 1; Type : Integer = 0; Standard : Boolean = True; Auction : Boolean = True; Cross : Boolean = True)|Price : Float|
-
-
-
-## Parâmetros:
-
-Interval: Intervalo de tempo utilizado para o cálculo do volume. Pode ser:
-
-- · itDaily: Utiliza o intervalo diário.
-- · itMinute: Utiliza o intervalo em minutos.
-
-Offset: Determina a quantidade de períodos (dias ou minutos, dependendo do Interval) a partir do qual o cálculo será feito. Aceita valores entre 0 e 720. Um valor de 0 indica o período atual, enquanto valores maiores indicam períodos passados.
-
-Type: Define o tipo de volume a ser considerado no cálculo. Pode ser:
-
-- · vtFinancial: Volume financeiro.
-- · vtQuantity: Volume em quantidade de ações ou contratos.
-- · vtTrade: Número de negócios realizados.
-
-Standard: Variável booleana que permite puxar os trades padrão. Valor padrão é True.
-
-Auction: Variável booleana que define se o volume de leilões será incluído no cálculo. Valor padrão é True.
-
-Cross: Variável booleana que indica se o volume de operações cruzadas (cross trades) será considerado. Valor padrão é True.
-
-Price: Preço em float do qual se deseja saber o volume.
-
-## Retorno:
-
-Float
-
-## Exemplo:
-
-// No exemplo a seguir, ser á atribu do í à vari á vel "dVolumeAtPrice"
-
-// o volume no pre ç o 38.60 para os ú ltimos 60 minutos var
-
-dVolumeAtPrice: Float;
-
-begin dVolumeAtPrice := VolumeAtPrice(itMinute, 60, vtTrade, True, True, True)|38.60|;
-
-end;
-
-## Função VolumeD
-
-## Descrição:
-
-A função VolumeD tem como finalidade retornar o volume financeiro de um número determinado de dias atrás.
-
-
-
-## Sintaxe:
-
-VolumeD(QuantidadeDiasAnteriores
-
-: Integer)
-
-## Parâmetros:
-
-
-
-dVolume := VolumeD(6);
-
-## Função VolumeM
-
-mVolume := VolumeM(1);
-
-QuantidadeDiasAnteriores:
-
-Determina a quantidade desejada de dias anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "dVolume" o volume de seis dias anteriores ao dia atual.
-
-## Descrição:
-
-A função VolumeM tem como finalidade retornar o volume financeiro de um número determinado de meses atrás.
-
-## Sintaxe:
-
-VolumeM(QuantidadeMesesAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeMesesAnteriores: Determina a quantidade desejada de meses anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "mAbertura" o volume do mês anterior ao atual.
-
-
-
-## Função VolumeW
-
-## wVolume := VolumeW(5);
-
-## Função VolumeY
-
-## Descrição:
-
-A função VolumeW tem como finalidade retornar o volume financeiro de um número determinado de semanas atrás.
-
-## Sintaxe:
-
-VolumeW(QuantidadeSemanasAnteriores
-
-: Integer)
-
-## Parâmetros:
-
-QuantidadeSemanasAnteriores: Determina a quantidade desejada de semanas anteriores.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "wVolume" o valor volume de cinco semanas anteriores à semana atual.
-
-## Descrição:
-
-A função VolumeY tem como finalidade retornar o volume financeiro de um número determinado de anos atrás.
-
-## Sintaxe:
-
-VolumeY(QuantidadeAnosAnteriores : Integer)
-
-## Parâmetros:
-
-QuantidadeAnosAnteriores:
-
-Determina a quantidade desejada de anos anteriores.
-
-## Retorno:
-
-
-
-## Float
-
-## yVolume := VolumeY(1);
-
-## nDia := Wednesday;
-
-## Exemplos:
-
-No exemplo a seguir, será atribuído à variável "yVolume" o volume do ano anterior ao atual.
-
-## Função Wednesday
-
-## Descrição:
-
-A função Wednesday retorna o número 3, representando o dia da semana: quarta-feira.
-
-## Sintaxe:
-
-Wednesday
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nDia" irá receber número 3, referente ao dia específico da semana.
-
-## Função Year
-
-## Descrição:
-
-A função Year retorna o ano de uma data específica.
-
-
-
-## yAtual := Year(CurrentDate);
-
-## Função Yesterday
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-Year(Data : Integer)
-
-## Parâmetros:
-
-Data:
-
-Data para obter o ano.
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "yAtual" irá receber o ano atual.
-
-## Descrição:
-
-A função Yesterday retorna a data do dia de ontem.
-
-Observação: Datas são representadas pelo tipo de dado "Integer", no formato: 1AnoMêsDia.
-
-## Sintaxe:
-
-Yesterday
-
-## Parâmetros:
-
-Sem parâmetro
-
-
-
-## nYesterday := Yesterday;
-
-## nYesterday := nTimeExchange;
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nYesterday" irá receber a data de ontem.
-
-## Função TimeExchange
-
-## Descrição:
-
-A função TimeExchange retorna o tempo do candle de acordo com o timezone da bolsa.
-
-## Sintaxe:
-
-TimeExchange
-
-## Parâmetros:
-
-Sem parâmetro
-
-## Retorno:
-
-Integer
-
-## Exemplos:
-
-No exemplo, a variável "nTimeExchange" irá receber a data de acordo com o timezone da bolsa.
-
-
-
-## Candlestick
-
-## Função C\_3WhSolds\_3BlkCrows
-
-## Descrição:
-
-A função C\_3WhSolds\_3BlkCrows identifica a ocorrência de dois tipos de candles: 3 White Soldiers e 3 Black Crows .
-
-## Sintaxe:
-
-C\_3WhSolds\_3BlkCrows(Comprimento : Integer, Fator : Integer, var o3WhiteSoldiers : Integer, var o3BlackCrows : Integer)
-
-## Parâmetros:
-
-Comprimento: Tamanho utilizado para calcular a média do corpo do candle. Fator: Determina quantas vezes a sombra do candle deve ser maior que o seu corpo. o3WhiteSoldiers: Variável para identificação de padrão(3 White Soldiers). o3BlackCrows: Variável para identificação de padrão(3 Black Crows).
-
-## Retorno:
-
-## Integer:
-
-- Identificação(retorno função):
-- 0 - Algum dos padrões foi identificado.
-- 1 - Nenhuma padrão identificado.
-
-Identificação(retorno variável: o3WhiteSoldiers):
-
-- 0 - Padrão 3 White Soldiers não foi identificado.
-- 1 - Padrão 3 White Soldiers identificado.
-
-Identificação(retorno variável: o3BlackCrows):
-
-- 0 - Padrão 3 Black Crows não foi identificado.
-- 1 - Padrão 3 Black Crows identificado.
-
-## Exemplos:
-
-No exemplo, caso seja identificado algum dos padrões(3 White Soldiers ou 3 Black Crows), considerando 9(Comprimento) e 2(Fator), será aplicada uma coloração(vermelha).
-
-
-
-
-## Função C\_BullEng\_BearEng
-
-## Descrição:
-
-A função C\_BullEng\_BearEng identifica a ocorrência de dois tipos de candles: Bullish Engulfing e Bearish Engulfing .
-
-## Sintaxe:
-
-C\_BullEng\_BearEng(Comprimento oBearishEngulfing : Integer)
-
-: Integer, var oBullishEngulfing: Integer, var
-
-## Parâmetros:
-
-Comprimento: Tamanho utilizado para calcular a média do corpo do candle.
-
-oBullishEngulfing: Variável para identificação de padrão(Bullish Engulfing).
-
-oBearishEngulfing: Variável para identificação de padrão(Bearish Engulfing).
-
-## Retorno:
-
-## Integer:
-
-Identificação(retorno função):
-
-- 0 - Algum dos padrões foi identificado.
-- 1 - Nenhuma padrão identificado.
-
-Identificação(retorno variável: oBullishEngulfing):
-
-- 0 - Padrão Bullish Engulfing não foi identificado.
-- 1 - Padrão Bullish Engulfing identificado.
-
-Identificação(retorno variável: oBearishEngulfing):
-
-- 0 - Padrão Bearish Engulfing não foi identificado.
-- 1 - Padrão Bearish Engulfing identificado.
-
-## Exemplos:
-
-No exemplo, caso o padrão Bullish Engulfing seja identificado, considerando 13(Comprimento), será aplicada uma coloração(amarela).
-
-aux := C\_BullEng\_BearEng(13, oBullishEngulfing, oBearishEngulfing);
-
-- if (oBullishEngulfing = 1) then
-
-PaintBar(clYellow);
-
-
-
-## Função C\_Doji
-
-## Descrição:
-
-A função C\_Doji identifica a ocorrência de um candle tipo Doji .
-
-## Sintaxe:
-
-C\_Doji(Percentual : Integer)
-
-## Parâmetros:
-
-Percentual: Limiar para(Abertura - Fechamento) que seria uma percentagem do intervalo do candle.
-
-## Retorno:
-
-## Integer:
-
-Identificação:
-
-0 - Padrão não identificado.
-
-1 - Padrão identificado.
-
-## Exemplos:
-
-No exemplo, caso o padrão seja identificado, considerando percentual de 5%, será aplicada uma coloração(verde).
-
-## if(C\_Doji(5) = 1)
-
-then PaintBar(clGreen) ;
-
-## Função C\_Hammer\_HangingMan
-
-## Descrição:
-
-A função C\_Hammer\_HangingMan identifica a ocorrência de dois tipos de candles: Hammer e Hanging Man .
-
-## Sintaxe:
-
-- C\_Hammer\_HangingMan(Comprimento : Integer, Fator : Integer, var oHammer : Integer, var oHangingMan : Integer)
-
-## Parâmetros:
-
-
-
-Comprimento: Tamanho utilizado para calcular a média do corpo do candle.
-
-Fator:
-
-Determina quantas vezes a sombra do candle deve ser maior que o seu corpo. Variável para identificação de padrão(Hammer).
-
-oHammer:
-
-oHangingMan: Variável para identificação de padrão(Hanging Man).
-
-## Retorno:
-
-## Integer:
-
-Identificação(retorno função):
-
-- 0 - Nenhum padrão identificado.
-- 1 - Algum dos padrões foi identificado.
-
-Identificação(retorno variável: oHammer):
-
-- 0 - Padrão Morning Hammer não foi identificado.
-- 1 - Padrão Morning Hammer identificado.
-
-Identificação(retorno variável: oHangingMan):
-
-- 0 - Padrão Hanging Man não foi identificado.
-- 1 - Padrão Hanging Man identificado.
-
-## Exemplos:
-
-No exemplo, caso seja identificado algum dos padrões(Hammer ou Hanging Man), considerando 14(Comprimento) e 2(Fator), será aplicada uma coloração(amarela).
-
-
-## Função C\_MornDoji\_EveDoji
-
-## Descrição:
-
-A função C\_MornDoji\_EveDoji identifica a ocorrência de dois tipos de candles: Morning Doji Star e Evening Doji Star .
-
-## Sintaxe:
-
-- C\_MornDoji\_EveDoji(Comprimento var oEveningDojiStar : Integer)
-
-: Integer, Percentual : Float, var oMorningDojiStar : Integer,
-
-## Parâmetros:
-
-Comprimento: Tamanho utilizado para calcular a média do corpo do candle.
-
-Percentual: Doji limiar para o (abrir - fechar) como uma percentagem do intervalo da barra.
-
-
-
-oMorningDojiStar: Variável para identificação de padrão(Morning Doji Star). oEveningDojiStar: Variável para identificação de padrão(Evening Doji Star).
-
-## Retorno:
-
-## Integer:
-
-Identificação(retorno função):
-
-- 0 - Algum dos padrões foi identificado.
-- 1 - Nenhuma padrão identificado.
-
-Identificação(retorno variável: oMorningDojiStar):
-
-- 0 - Padrão Morning Doji Star não foi identificado.
-- 1 - Padrão Morning Doji Star identificado.
-
-Identificação(retorno variável: oEveningDojiStar):
-
-- 0 - Padrão Evening Doji Star não foi identificado.
-- 1 - Padrão Evening Doji Star identificado.
-
-## Exemplos:
-
-No exemplo, caso seja identificado algum dos padrões(Morning Doji Star ou Evening Doji Star), considerando 9(Comprimento) e 3(Percentual), será aplicada uma coloração(branca).
-
-
-## Função C\_MornStar\_EveStar
-
-## Descrição:
-
-Morning
-
-A função C\_MornStar\_EveStar identifica a ocorrência de dois tipos de candles: Star e Evening Star .
-
-## Sintaxe:
-
-C\_MornStar\_EveStar(Comprimento Integer)
-
-: Integer, var oMorningStar : Integer, var oEveningStar :
-
-## Parâmetros:
-
-Comprimento:
-
-Tamanho utilizado para calcular a média do corpo do candle.
-
-oMorningStar:
-
-Variável para identificação de padrão(Morning Star).
-
-oEveningStar: Variável para identificação de padrão(Evening Star).
-
-## Retorno:
-
-
-
-## Integer:
-
-Identificação(retorno função):
-
-- 0 - Algum dos padrões foi identificado.
-- 1 - Nenhuma padrão identificado.
-
-Identificação(retorno variável: oMorningStar):
-
-- 0 - Padrão Morning Star não foi identificado.
-- 1 - Padrão Morning Star identificado.
-
-Identificação(retorno variável: oEveningStar):
-
-- 0 - Padrão Evening Star não foi identificado.
-- 1 - Padrão Evening Star identificado.
-
-## Exemplos:
-
-No exemplo, caso o padrão Evening Star seja identificado, considerando 6(Comprimento), será aplicada uma coloração(verde).
-
-aux := C\_MornStar\_EveStar(6, oMorningStar, oEveningStar);
-
-if (oEveningStar = 1) then
-
-PaintBar(clGreen);
-
-## Função C\_PierceLine\_DkCloud
-
-## Descrição:
-
-identifica a ocorrência de dois tipos de candles:
-
-A função C\_PierceLine\_DkCloud Piercing Line e Dark Cloud .
-
-## Sintaxe:
-
-C\_PierceLine\_DkCloud(Comprimento : Integer, var oPiercingLine : Ingeter, var oDarkCloud : Ingeter)
-
-## Parâmetros:
-
-Comprimento: Tamanho utilizado para calcular a média do corpo do candle.
-
-oPiercingLine:
-
-Variável para identificação de padrão(Piercing Line). Variável para identificação de padrão(Dark Cloud).
-
-oDarkCloud:
-
-## Retorno:
-
-## Integer:
-
-Identificação(retorno função):
-
-- 0 - Algum dos padrões foi identificado.
-
-
-
-- 1 - Nenhuma padrão identificado.
-- Identificação(retorno variável: oPiercingLine):
-- 0 - Padrão Piercing Line não foi identificado.
-- 1 - Padrão Piercing Line identificado.
-
-Identificação(retorno variável: oDarkCloud):
-
-- 0 - Padrão Dark Cloud não foi ident
-
-## Exemplos:
-
-No exemplo, caso o padrão Dark Cloud seja identificado, considerando 5(Comprimento), será aplicada uma coloração(amarela).
-
-
-## Função C\_ShootingStar
-
-## Descrição:
-
-A função C\_ShootingStar identifica a ocorrência de candles tipo Shooting Star .
-
-## Sintaxe:
-
-- C\_ShootingStar(Comprimento : Integer, Fator : Integer)
-
-## Parâmetros:
-
-Comprimento:
-
-Tamanho utilizado para calcular a média do corpo do candle.
-
-Fator: Determina quantas vezes a sombra do candle deve ser maior que o seu corpo.
-
-## Retorno:
-
-## Integer:
-
-- Identificação:
-- 0 - Padrão não identificado.
-- 1 - Padrão identificado.
-
-## Exemplos:
-
-
-
-No exemplo, caso o padrão seja identificado, considerando 10(Comprimento) e 2(Fator), será aplicada uma coloração(verde).
-
-if (C\_ShootingStar(10, 2) = 1) then
-
-PaintBar(clVerde) ;
-
-## Exemplos
-
-## Função DiMaisDiMenos
-
-## Descrição:
-
-O exemplo DiMaisDiMenos possui a implementação do indicador DI+/DI, onde foi determinado um parâmetro (input) para o período.
-
-Observação: o exemplo com o código fonte está disponível no editor de estratégias, para visualizá-lo, acesse o menu: "abrir &gt; exemplos".
-
-## Sintaxe:
-
-DiMaisDiMenos(Periodo : Integer)
-
-## Parâmetros:
-
-Periodo: Período utilizado no momento do cálculo do indicador.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "aux" o retorno do indicador criado.
-
-## aux := DiMaisDiMenos(14);
-
-## Função IFR
-
-## Descrição:
-
-
-
-A função IFR retorna o valor(tipo clássico) do indicador IFR , de acordo com o período.
-
-Observação: o exemplo com o código fonte está disponível no editor de estratégias, para visualizá-lo, acesse o menu: "abrir &gt; exemplos".
-
-## Sintaxe:
-
-IFR(Periodo : Integer)
-
-## Parâmetros:
-
-Periodo: Período utilizado no momento do cálculo do indicador.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, a variável "aux" irá receber o valor do indicador IFR, considerando 2 períodos para o cálculo.
-
-## aux := IFR(2);
-
-## Função Media
-
-## Descrição:
-
-A função Media retorna o valor do indicador Média Móvel, tipo aritmética.
-
-Observação: o exemplo com o código fonte está disponível no editor de estratégias, para visualizá-lo, acesse o menu: "abrir &gt; exemplos".
-
-## Sintaxe:
-
-Media(Periodo : Integer, TipoSerie : Serie)
-
-## Parâmetros:
-
-Período:
-
-Período utilizado no momento do cálculo do indicador. Série que será considerada para o cálculo.
-
-TipoSerie:
-
-## Retorno:
-
-
-## Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "vMed" o valor do indicador Média Móvel(Aritmética), considerando 100 períodos, e a série de fechamento(Close) para o cálculo.
-
-vMed := Media(100, Close);
-
-## Função MediaExp
-
-## Descrição:
-
-A função MediaExp retorna o valor do indicador Média Móvel, tipo exponencial.
-
-Observação: o exemplo com o código fonte está disponível no editor de estratégias, para visualizá-lo, acesse o menu: "abrir &gt; exemplos".
-
-## Sintaxe:
-
-MediaExp(Periodo : Integer, TipoSerie : Serie)
-
-## Parâmetros:
-
-Periodo: Período utilizado no momento do cálculo do indicador. TipoSerie: Série que será considerada para o cálculo.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será atribuído à variável "vMed" o valor do indicador Média Móvel(Exponencial), considerando 100 períodos, e a série de fechamento(Close) para o cálculo.
-
-vMed := MediaExp(100, Close);
-
-
-
-
-## Função PaintVar
-
-## Descrição:
-
-A  função PaintVar possui  a  implementação  de  uma  estratégia  de  coloração,  a  qual  compara  se  o fechamento do último candle é positivo ou negativo em relação ao fechamento do(candle) anterior, e, como indicador, apenas retorna o último preço do ativo.
-
-Observação: o exemplo com o código fonte está disponível no editor de estratégias, para visualizá-lo, acesse o menu: "abrir &gt; exemplos".
-
-## Sintaxe:
-
-PaintVar
-
-## Parâmetros:
-
-Sem parâmetros.
-
-## Retorno:
-
-Float
-
-## Exemplos:
-
-No exemplo, será plotado o último preço, onde a regra de coloração correspondente poderá ser aplicada sobre o indicador.
-
-## Plot(PaintVar) ;
